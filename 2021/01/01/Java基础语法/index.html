@@ -1,0 +1,3730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.7.7'>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="Volantis" content="5.7.7">
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+  <link rel="canonical" href="http://example.com/2021/01/01/java基础语法/"/>
+  <!-- 渲染优化 -->
+    <meta http-equiv='x-dns-prefetch-control' content='on' />
+      <link rel='dns-prefetch' href='https://unpkg.com'>
+      <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <!-- import head_begin begin -->
+  <!-- import head_begin end -->
+  <!-- Custom Files headBegin begin-->
+  
+  <!-- Custom Files headBegin end-->
+  <link rel="preload" href="/css/style.css" as="style">
+  <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <!-- feed -->
+  <!-- 页面元数据 -->
+  <title>Java基础语法 - 龍</title>
+  <meta name="keywords" content="Java,后端,null">
+  <meta desc name="description" content="龍 - 龍 - 龍">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础语法">
+<meta property="og:url" content="http://example.com/2021/01/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="龍">
+<meta property="og:description" content="1.Java基础语法1.1数据类型1.1.1基本数据类型   数据类型 关键字 内存占用 取值范围 默认值    字节型 byte 1个字节 -128~127 0   短整型 short 2个字节 -32768-32767 0   整形 int 4个字节 -2,147,483,648-2,147,483,647 0   长整型 long 8个字节 -9,223,372,036,854,775,80">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-01-01T04:16:12.000Z">
+<meta property="article:modified_time" content="2023-02-14T16:27:21.467Z">
+<meta property="article:author" content="龍">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+  <style>
+    /* 首屏样式 */
+    #safearea {
+  display: none;
+}
+:root {
+  --color-site-body: #f4f4f4;
+  --color-site-bg: #f4f4f4;
+  --color-site-inner: #fff;
+  --color-site-footer: #666;
+  --color-card: #fff;
+  --color-text: #444;
+  --color-block: #f6f6f6;
+  --color-inlinecode: #c74f00;
+  --color-codeblock: #fff7ea;
+  --color-h1: #3a3a3a;
+  --color-h2: #3a3a3a;
+  --color-h3: #333;
+  --color-h4: #444;
+  --color-h5: #555;
+  --color-h6: #666;
+  --color-p: #444;
+  --color-list: #666;
+  --color-list-hl: #30ad91;
+  --color-meta: #888;
+  --color-read-bkg: #e0d8c8;
+  --color-read-post: #f8f1e2;
+  --color-copyright-bkg: #f5f5f5;
+}
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+html {
+  color: var(--color-text);
+  width: 100%;
+  height: 100%;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  font-size: 16px;
+}
+html >::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+html >::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+html >::-webkit-scrollbar-thumb {
+  background: #3dd9b6;
+  cursor: pointer;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+}
+html >::-webkit-scrollbar-thumb:hover {
+  background: #ff5722;
+}
+body {
+  background-color: var(--color-site-body);
+  text-rendering: optimizelegibility;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body.modal-active {
+  overflow: hidden;
+}
+@media screen and (max-width: 680px) {
+  body.modal-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+a {
+  color: #2092ec;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+a:hover {
+  color: #ff5722;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+ul,
+ol {
+  padding-left: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+header {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+img {
+  border: 0;
+  background: none;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  height: 0;
+  border: 0;
+  border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-bottom: 1px solid rgba(68,68,68,0.1);
+}
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+@supports (backdrop-filter: blur(20px)) {
+  .blur {
+    background: rgba(255,255,255,0.9) !important;
+    backdrop-filter: saturate(200%) blur(20px);
+  }
+}
+.shadow {
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.shadow.floatable {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.shadow.floatable:hover {
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+#l_cover {
+  min-height: 64px;
+}
+.cover-wrapper {
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  color: var(--color-site-inner);
+  padding: 0 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -100px;
+}
+.cover-wrapper .cover-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+}
+.cover-wrapper .cover-bg.lazyload:not(.loaded) {
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+}
+.cover-wrapper .cover-bg.lazyload.loaded {
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  animation-name: fadeIn;
+}
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -khtml-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.cover-wrapper#full {
+  height: calc(100vh + 100px);
+  padding-bottom: 100px;
+}
+.cover-wrapper#half {
+  max-height: 640px;
+  min-height: 400px;
+  height: calc(36vh - 64px + 200px);
+}
+.cover-wrapper #scroll-down {
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  bottom: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.cover-wrapper #scroll-down .scroll-down-effects {
+  color: #fff;
+  font-size: 24px;
+  line-height: 64px;
+  position: absolute;
+  width: 24px;
+  left: calc(50% - 12px);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  animation: scroll-down-effect 1.5s infinite;
+  -webkit-animation: scroll-down-effect 1.5s infinite;
+  -khtml-animation: scroll-down-effect 1.5s infinite;
+  -moz-animation: scroll-down-effect 1.5s infinite;
+  -o-animation: scroll-down-effect 1.5s infinite;
+  -ms-animation: scroll-down-effect 1.5s infinite;
+}
+@-moz-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-webkit-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@-o-keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@keyframes scroll-down-effect {
+  0% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+  50% {
+    top: -16px;
+    opacity: 0.4;
+    -webkit-opacity: 0.4;
+    -moz-opacity: 0.4;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.cover-wrapper .cover-body {
+  margin-top: 64px;
+  margin-bottom: 100px;
+}
+.cover-wrapper .cover-body,
+.cover-wrapper .cover-body .top,
+.cover-wrapper .cover-body .bottom {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  max-width: 100%;
+}
+.cover-wrapper .cover-body .bottom {
+  margin-top: 32px;
+}
+.cover-wrapper .cover-body .title {
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+  font-size: 3.125rem;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+.cover-wrapper .cover-body .subtitle {
+  font-size: 20px;
+}
+.cover-wrapper .cover-body .logo {
+  max-height: 120px;
+  max-width: calc(100% - 4 * 16px);
+}
+@media screen and (min-height: 1024px) {
+  .cover-wrapper .cover-body .title {
+    font-size: 3rem;
+  }
+  .cover-wrapper .cover-body .subtitle {
+    font-size: 1.05rem;
+  }
+  .cover-wrapper .cover-body .logo {
+    max-height: 150px;
+  }
+}
+.cover-wrapper .cover-body .m_search {
+  position: relative;
+  max-width: calc(100% - 16px);
+  width: 320px;
+  vertical-align: middle;
+}
+.cover-wrapper .cover-body .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  width: 100%;
+}
+.cover-wrapper .cover-body .m_search .icon,
+.cover-wrapper .cover-body .m_search .input {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.cover-wrapper .cover-body .m_search .icon {
+  position: absolute;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  line-height: 2.5rem;
+  width: 32px;
+  top: 0;
+  left: 5px;
+  color: rgba(68,68,68,0.75);
+}
+.cover-wrapper .cover-body .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  height: 2.5rem;
+  width: 100%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-size: 0.875rem;
+  -webkit-appearance: none;
+  padding-left: 36px;
+  border-radius: 1.4rem;
+  -webkit-border-radius: 1.4rem;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  color: var(--color-text);
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .cover-body .m_search .input {
+    padding-left: 36px;
+  }
+}
+.cover-wrapper .cover-body .m_search .input:hover {
+  background: rgba(255,255,255,0.8);
+}
+.cover-wrapper .cover-body .m_search .input:focus {
+  background: #fff;
+}
+.cover-wrapper .list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -khtml-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  align-items: stretch;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.cover-wrapper .list-h a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 0;
+  -ms-flex: 1 0;
+  flex: 1 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  font-weight: 600;
+}
+.cover-wrapper .list-h a img {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  margin: 4px;
+  min-width: 40px;
+  max-width: 44px;
+}
+@media screen and (max-width: 768px) {
+  .cover-wrapper .list-h a img {
+    min-width: 36px;
+    max-width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cover-wrapper .list-h a img {
+    margin: 2px 4px;
+    min-width: 32px;
+    max-width: 36px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .cover-wrapper .list-h a img {
+    min-width: 28px;
+    max-width: 32px;
+  }
+}
+.cover-wrapper {
+  max-width: 100%;
+}
+.cover-wrapper.search .bottom .menu {
+  margin-top: 16px;
+}
+.cover-wrapper.search .bottom .menu .list-h a {
+  white-space: nowrap;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 2px;
+  margin: 4px;
+  color: var(--color-site-inner);
+  opacity: 0.75;
+  -webkit-opacity: 0.75;
+  -moz-opacity: 0.75;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  border-bottom: 2px solid transparent;
+}
+.cover-wrapper.search .bottom .menu .list-h a i {
+  margin-right: 4px;
+}
+.cover-wrapper.search .bottom .menu .list-h a p {
+  font-size: 0.9375rem;
+}
+.cover-wrapper.search .bottom .menu .list-h a:hover,
+.cover-wrapper.search .bottom .menu .list-h a.active,
+.cover-wrapper.search .bottom .menu .list-h a:active {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  border-bottom: 2px solid var(--color-site-inner);
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/UbuntuMono/UbuntuMono-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Varela Round';
+  src: url("https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/VarelaRound/VarelaRound-Regular.ttf");
+  font-weight: 'normal';
+  font-style: 'normal';
+  font-display: swap;
+}
+.l_header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
+  height: 64px;
+  background: var(--color-card);
+  box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
+}
+.l_header.auto {
+  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease;
+  -khtml-transition: opacity 0.4s ease;
+  -moz-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  -ms-transition: opacity 0.4s ease;
+  visibility: hidden;
+}
+.l_header.auto.show {
+  opacity: 1 !important;
+  -webkit-opacity: 1 !important;
+  -moz-opacity: 1 !important;
+  visibility: visible;
+}
+.l_header .container {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.l_header #wrapper {
+  height: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.l_header #wrapper .nav-main,
+.l_header #wrapper .nav-sub {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -khtml-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -o-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -khtml-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  align-items: center;
+}
+.l_header #wrapper .nav-main {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.l_header #wrapper.sub .nav-main {
+  transform: translateY(-64px);
+  -webkit-transform: translateY(-64px);
+  -khtml-transform: translateY(-64px);
+  -moz-transform: translateY(-64px);
+  -o-transform: translateY(-64px);
+  -ms-transform: translateY(-64px);
+}
+.l_header #wrapper .nav-sub {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  opacity: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  height: 64px;
+  width: calc(100% - 2 * 16px);
+  position: absolute;
+}
+.l_header #wrapper .nav-sub ::-webkit-scrollbar {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (min-width: 2048px) {
+  .l_header #wrapper .nav-sub {
+    max-width: 55vw;
+    margin: auto;
+  }
+}
+.l_header #wrapper.sub .nav-sub {
+  opacity: 1;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+}
+.l_header #wrapper .title {
+  position: relative;
+  color: var(--color-text);
+  padding-left: 24px;
+  max-height: 64px;
+}
+.l_header #wrapper .nav-main .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  line-height: 64px;
+  padding: 0 24px;
+  font-size: 1.25rem;
+  font-family: "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Helvetica, monospace;
+}
+.l_header #wrapper .nav-main .title img {
+  height: 64px;
+}
+.l_header .nav-sub {
+  max-width: 1080px;
+  margin: auto;
+}
+.l_header .nav-sub .title {
+  font-weight: bold;
+  font-family: UbuntuMono, "Varela Round", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, Menlo, Monaco, monospace, sans-serif;
+  line-height: 1.2;
+  max-height: 64px;
+  white-space: normal;
+  flex-shrink: 1;
+}
+.l_header .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  line-height: 64px;
+  align-items: center;
+}
+.l_header .switcher .s-toc {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .l_header .switcher .s-toc {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+  }
+}
+.l_header .switcher >li {
+  height: 48px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  margin: 2px;
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li {
+    margin: 0 1px;
+    height: 48px;
+  }
+}
+.l_header .switcher >li >a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0.85em 1.1em;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  color: #3dd9b6;
+}
+.l_header .switcher >li >a:hover {
+  border: none;
+}
+.l_header .switcher >li >a.active,
+.l_header .switcher >li >a:active {
+  border: none;
+  background: var(--color-site-bg);
+}
+@media screen and (max-width: 500px) {
+  .l_header .switcher >li >a {
+    width: 36px;
+    height: 48px;
+  }
+}
+.l_header .nav-sub .switcher {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+}
+.l_header .m_search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  height: 64px;
+  width: 240px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (max-width: 1024px) {
+  .l_header .m_search {
+    width: 44px;
+    min-width: 44px;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+  }
+  .l_header .m_search:hover {
+    width: 240px;
+  }
+  .l_header .m_search:hover input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search:hover .input {
+    width: 100%;
+  }
+  .l_header .m_search:hover .input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search {
+    min-width: 0;
+  }
+  .l_header .m_search input::placeholder {
+    opacity: 1;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+  }
+}
+.l_header .m_search .form {
+  position: relative;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.l_header .m_search .icon {
+  position: absolute;
+  width: 36px;
+  left: 5px;
+  color: var(--color-meta);
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .icon {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+.l_header .m_search .input {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.3;
+  width: 100%;
+  color: var(--color-text);
+  background: #fafafa;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-left: 40px;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border: none;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+@media screen and (min-width: 500px) {
+  .l_header .m_search .input:focus {
+    box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0,0,0,0.1);
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .m_search .input {
+    background: var(--color-block);
+    padding-left: 8px;
+    border: none;
+  }
+  .l_header .m_search .input:hover,
+  .l_header .m_search .input:focus {
+    border: none;
+  }
+}
+@media (max-width: 500px) {
+  .l_header .m_search {
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    background: #fff;
+    transition: all 0.28s ease;
+    -webkit-transition: all 0.28s ease;
+    -khtml-transition: all 0.28s ease;
+    -moz-transition: all 0.28s ease;
+    -o-transition: all 0.28s ease;
+    -ms-transition: all 0.28s ease;
+  }
+  .l_header .m_search .input {
+    border-radius: 32px;
+    -webkit-border-radius: 32px;
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+  .l_header.z_search-open .m_search {
+    width: 100%;
+  }
+  .l_header.z_search-open .m_search .input {
+    width: calc(100% - 120px);
+  }
+}
+ul.m-pc >li>a {
+  color: inherit;
+  border-bottom: 2px solid transparent;
+}
+ul.m-pc >li>a:active,
+ul.m-pc >li>a.active {
+  border-bottom: 2px solid #3dd9b6;
+}
+ul.m-pc li:hover >ul.list-v,
+ul.list-v li:hover >ul.list-v {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.nav-list-h {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: -ms-flexbox /* TWEENER - IE 10 */;
+  display: -webkit-flex /* NEW - Chrome */;
+  display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+  display: flex;
+  align-items: stretch;
+}
+ul.nav-list-h>li {
+  position: relative;
+  justify-content: center;
+  -webkit-justify-content: center;
+  -khtml-justify-content: center;
+  -moz-justify-content: center;
+  -o-justify-content: center;
+  -ms-justify-content: center;
+  height: 100%;
+  line-height: 2.4;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+ul.nav-list-h>li >a {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+}
+ul.list-v {
+  z-index: 1;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: absolute;
+  background: var(--color-card);
+  box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  -webkit-box-shadow: 0 2px 4px 0px rgba(0,0,0,0.08), 0 4px 8px 0px rgba(0,0,0,0.08), 0 8px 16px 0px rgba(0,0,0,0.08);
+  margin-top: -6px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  padding: 8px 0;
+}
+ul.list-v.show {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+}
+ul.list-v hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+ul.list-v >li {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+ul.list-v >li.header {
+  font-size: 0.78125rem;
+  font-weight: bold;
+  line-height: 2em;
+  color: var(--color-meta);
+  margin: 8px 16px 4px;
+}
+ul.list-v >li.header i {
+  margin-right: 8px;
+}
+ul.list-v >li ul {
+  margin-left: 0;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: -40px;
+}
+ul.list-v .aplayer-container {
+  min-height: 64px;
+  padding: 6px 16px;
+}
+ul.list-v >li>a {
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  color: var(--color-list);
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 36px;
+  padding: 0 20px 0 16px;
+  text-overflow: ellipsis;
+  margin: 0 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+@media screen and (max-width: 1024px) {
+  ul.list-v >li>a {
+    line-height: 40px;
+  }
+}
+ul.list-v >li>a >i {
+  margin-right: 8px;
+}
+ul.list-v >li>a:active,
+ul.list-v >li>a.active {
+  color: var(--color-list-hl);
+}
+ul.list-v >li>a:hover {
+  color: var(--color-list-hl);
+  background: var(--color-site-bg);
+}
+.l_header .menu >ul>li>a {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: block;
+  padding: 0 8px;
+}
+.l_header .menu >ul>li>a >i {
+  margin-right: 4px;
+}
+.l_header ul.nav-list-h>li {
+  color: var(--color-list);
+  line-height: 64px;
+}
+.l_header ul.nav-list-h>li >a {
+  max-height: 64px;
+  overflow: hidden;
+  color: inherit;
+}
+.l_header ul.nav-list-h>li >a:active,
+.l_header ul.nav-list-h>li >a.active {
+  color: #3dd9b6;
+}
+.l_header ul.nav-list-h>li:hover>a {
+  color: var(--color-list-hl);
+}
+.l_header ul.nav-list-h>li i.music {
+  animation: rotate-effect 1.5s linear infinite;
+  -webkit-animation: rotate-effect 1.5s linear infinite;
+  -khtml-animation: rotate-effect 1.5s linear infinite;
+  -moz-animation: rotate-effect 1.5s linear infinite;
+  -o-animation: rotate-effect 1.5s linear infinite;
+  -ms-animation: rotate-effect 1.5s linear infinite;
+}
+@-moz-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+@keyframes rotate-effect {
+  0% {
+    transform: rotate(0);
+    -webkit-transform: rotate(0);
+    -khtml-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -khtml-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -khtml-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -khtml-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -khtml-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+  }
+}
+.menu-phone li ul.list-v {
+  right: calc(100% - 0.5 * 16px);
+}
+.menu-phone li ul.list-v ul {
+  right: calc(100% - 0.5 * 16px);
+}
+#wrapper {
+  max-width: 1080px;
+  margin: auto;
+}
+@media screen and (min-width: 2048px) {
+  #wrapper {
+    max-width: 55vw;
+  }
+}
+#wrapper .menu {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  margin: 0 16px 0 0;
+}
+#wrapper .menu .list-v ul {
+  left: calc(100% - 0.5 * 16px);
+}
+.menu-phone {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  margin-top: 16px;
+  right: 8px;
+  transition: all 0.28s ease;
+  -webkit-transition: all 0.28s ease;
+  -khtml-transition: all 0.28s ease;
+  -moz-transition: all 0.28s ease;
+  -o-transition: all 0.28s ease;
+  -ms-transition: all 0.28s ease;
+}
+.menu-phone ul {
+  right: calc(100% - 0.5 * 16px);
+}
+@media screen and (max-width: 500px) {
+  .menu-phone {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: block;
+  }
+}
+.l_header {
+  max-width: 65vw;
+  left: calc((100% - 65vw) * 0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+@media screen and (max-width: 2048px) {
+  .l_header {
+    max-width: 1112px;
+    left: calc((100% - 1112px) * 0.5);
+  }
+}
+@media screen and (max-width: 1112px) {
+  .l_header {
+    left: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .l_header .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .l_header #wrapper .nav-main .title {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .l_header #wrapper .nav-sub {
+    width: 100%;
+  }
+  .l_header #wrapper .nav-sub .title {
+    overflow-y: scroll;
+    margin-top: 2px;
+    padding: 8px 16px;
+  }
+  .l_header #wrapper .switcher {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: -ms-flexbox /* TWEENER - IE 10 */;
+    display: -webkit-flex /* NEW - Chrome */;
+    display: flex /* NEW, Spec - Opera 12.1, Firefox 20+ */;
+    display: flex;
+    margin-right: 8px;
+  }
+  .l_header .menu {
+    display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+    display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .list-v li {
+    max-width: 270px;
+  }
+}
+#u-search {
+  display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
+  display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 60px 20px;
+  z-index: 1001;
+}
+@media screen and (max-width: 680px) {
+  #u-search {
+    padding: 0px;
+  }
+}
+
+  </style>
+  <link rel="stylesheet" href="/css/style.css" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css"></noscript>
+  
+<script>
+if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
+    document.write(
+	'<style>'+
+		'html{'+
+			'overflow-x: hidden !important;'+
+			'overflow-y: hidden !important;'+
+		'}'+
+		'.kill-ie{'+
+			'text-align:center;'+
+			'height: 100%;'+
+			'margin-top: 15%;'+
+			'margin-bottom: 5500%;'+
+		'}'+
+    '.kill-t{'+
+      'font-size: 2rem;'+
+    '}'+
+    '.kill-c{'+
+      'font-size: 1.2rem;'+
+    '}'+
+		'#l_header,#l_body{'+
+			'display: none;'+
+		'}'+
+	'</style>'+
+    '<div class="kill-ie">'+
+        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
+        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
+    '</div>');
+</script>
+
+
+<noscript>
+	<style>
+		html{
+			overflow-x: hidden !important;
+			overflow-y: hidden !important;
+		}
+		.kill-noscript{
+			text-align:center;
+			height: 100%;
+			margin-top: 15%;
+			margin-bottom: 5500%;
+		}
+    .kill-t{
+      font-size: 2rem;
+    }
+    .kill-c{
+      font-size: 1.2rem;
+    }
+		#l_header,#l_body{
+			display: none;
+		}
+	</style>
+    <div class="kill-noscript">
+        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
+        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+    </div>
+</noscript>
+
+
+  <script>
+  /************这个文件存放不需要重载的全局变量和全局函数*********/
+  window.volantis = {}; // volantis 全局变量
+  volantis.debug = "env"; // 调试模式
+  volantis.dom = {}; // 页面Dom see: /source/js/app.js etc.
+
+  volantis.GLOBAL_CONFIG ={
+    debug: "env",
+    cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
+    default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
+    lastupdate: new Date(1676392959571),
+    sidebar: {
+      for_page: ["blogger","category","tagcloud","donate"],
+      for_post: ["toc"],
+      webinfo: {
+        lastupd: {
+          enable: true,
+          friendlyShow: true
+        },
+        runtime: {
+          data: "2020/01/01",
+          unit: "天"
+        }
+      }
+    },
+    plugins: {
+      message: {"enable":true,"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/css/iziToast.min.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/izitoast/dist/js/iziToast.min.js","icon":{"default":"fa-solid fa-info-circle light-blue","quection":"fa-solid fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"far fa-copyright light-blue"},"aplayer":{"enable":true,"play":"fa-solid fa-play","pause":"fa-solid fa-pause"},"rightmenu":{"enable":true,"notice":true}},
+      fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
+      
+      aplayer: {
+        id: 958147085,
+        enable:true
+      },
+      
+      
+      
+    }
+  }
+
+  /******************** volantis.EventListener ********************************/
+  // 事件监听器 see: /source/js/app.js
+  volantis.EventListener = {}
+  // 这里存放pjax切换页面时将被移除的事件监听器
+  volantis.EventListener.list = []
+  //构造方法
+  function volantisEventListener(type, f, ele) {
+    this.type = type
+    this.f = f
+    this.ele = ele
+  }
+  // 移除事件监听器
+  volantis.EventListener.remove = () => {
+    volantis.EventListener.list.forEach(function (i) {
+      i.ele.removeEventListener(i.type, i.f, false)
+    })
+    volantis.EventListener.list = []
+  }
+  /******************** volantis.dom.$ ********************************/
+  // 注：这里没有选择器，也没有forEach一次只处理一个dom，这里重新封装主题常用的dom方法，返回的是dom对象，对象包含了以下方法，同时保留dom的原生API
+  function volantisDom(ele) {
+    if (!ele) ele = document.createElement("div")
+    this.ele = ele;
+    // ==============================================================
+    this.ele.find = (c) => {
+      let q = this.ele.querySelector(c)
+      if (q)
+        return new volantisDom(q)
+    }
+    // ==============================================================
+    this.ele.hasClass = (c) => {
+      return this.ele.className.match(new RegExp('(\\s|^)' + c + '(\\s|$)'));
+    }
+    this.ele.addClass = (c) => {
+      this.ele.classList.add(c);
+      return this.ele
+    }
+    this.ele.removeClass = (c) => {
+      this.ele.classList.remove(c);
+      return this.ele
+    }
+    this.ele.toggleClass = (c) => {
+      if (this.ele.hasClass(c)) {
+        this.ele.removeClass(c)
+      } else {
+        this.ele.addClass(c)
+      }
+      return this.ele
+    }
+    // ==============================================================
+    // 参数 r 为 true 表示pjax切换页面时事件监听器将被移除，false不移除
+    this.ele.on = (c, f, r = 1) => {
+      this.ele.addEventListener(c, f, false)
+      if (r) {
+        volantis.EventListener.list.push(new volantisEventListener(c, f, this.ele))
+      }
+      return this.ele
+    }
+    this.ele.click = (f, r) => {
+      this.ele.on("click", f, r)
+      return this.ele
+    }
+    this.ele.scroll = (f, r) => {
+      this.ele.on("scroll", f, r)
+      return this.ele
+    }
+    // ==============================================================
+    this.ele.html = (c) => {
+      // if(c=== undefined){
+      //   return this.ele.innerHTML
+      // }else{
+      this.ele.innerHTML = c
+      return this.ele
+      // }
+    }
+    // ==============================================================
+    this.ele.hide = (c) => {
+      this.ele.style.display = "none"
+      return this.ele
+    }
+    this.ele.show = (c) => {
+      this.ele.style.display = "block"
+      return this.ele
+    }
+    // ==============================================================
+    return this.ele
+  }
+  volantis.dom.$ = (ele) => {
+    return !!ele ? new volantisDom(ele) : null;
+  }
+  /******************** RunItem ********************************/
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = ()=>{
+          volantis.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) =>{
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index,1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+  /******************** Pjax ********************************/
+  // /layout/_plugins/pjax/index.ejs
+  // volantis.pjax.send(callBack[,"callBackName"]) 传入pjax:send回调函数
+  // volantis.pjax.push(callBack[,"callBackName"]) 传入pjax:complete回调函数
+  // volantis.pjax.error(callBack[,"callBackName"]) 传入pjax:error回调函数
+  volantis.pjax = {};
+  volantis.pjax.method = {
+    complete: new RunItem(),
+    error: new RunItem(),
+    send: new RunItem(),
+  };
+  volantis.pjax = Object.assign(volantis.pjax, {
+    push: volantis.pjax.method.complete.push,
+    error: volantis.pjax.method.error.push,
+    send: volantis.pjax.method.send.push,
+  });
+  /******************** RightMenu ********************************/
+  // volantis.rightmenu.handle(callBack[,"callBackName"]) 外部菜单项控制
+  // 可在 volantis.mouseEvent 处获取右键事件
+  volantis.rightmenu = {};
+  volantis.rightmenu.method = {
+    handle: new RunItem(),
+  }
+  volantis.rightmenu = Object.assign(volantis.rightmenu, {
+    handle: volantis.rightmenu.method.handle.push,
+  });
+  /********************  Dark Mode  ********************************/
+  // /layout/_partial/scripts/darkmode.ejs
+  // volantis.dark.mode 当前模式 dark or light
+  // volantis.dark.toggle() 暗黑模式触发器
+  // volantis.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  volantis.dark = {};
+  volantis.dark.method = {
+    toggle: new RunItem(),
+  };
+  volantis.dark = Object.assign(volantis.dark, {
+    push: volantis.dark.method.toggle.push,
+  });
+  /********************  Message  ********************************/
+  // VolantisApp.message
+  /********************  isMobile  ********************************/
+  // /source/js/app.js
+  // volantis.isMobile
+  // volantis.isMobileOld
+  /********************脚本动态加载函数********************************/
+  // volantis.js(src, cb)  cb 可以传入onload回调函数 或者 JSON对象 例如: volantis.js("src", ()=>{}) 或 volantis.js("src", {defer:true,onload:()=>{}})
+  // volantis.css(src)
+
+  // 返回Promise对象，如下方法同步加载资源，这利于处理文件资源之间的依赖关系，例如：APlayer 需要在 MetingJS 之前加载
+  // (async () => {
+  //     await volantis.js("...theme.plugins.aplayer.js.aplayer...")
+  //     await volantis.js("...theme.plugins.aplayer.js.meting...")
+  // })();
+
+  // 已经加入了setTimeout
+  volantis.js = (src, cb) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+  volantis.css = (src) => {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  }
+  /********************按需加载的插件********************************/
+  // volantis.import.jQuery().then(()=>{})
+  volantis.import = {
+    jQuery: () => {
+      if (typeof jQuery == "undefined") {
+        return volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/jquery/dist/jquery.min.js")
+      } else {
+        return new Promise(resolve => {
+          resolve()
+        });
+      }
+    }
+  }
+  /********************** requestAnimationFrame ********************************/
+  // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+  // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+  volantis.requestAnimationFrame = (fn)=>{
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+    }
+    window.requestAnimationFrame(fn)
+  }
+  /************************ layoutHelper *****************************************/
+  volantis.layoutHelper = (helper, html, opt)=>{
+    opt = Object.assign({clean:false, pjax:true}, opt)
+    function myhelper(helper, html, clean) {
+      volantis.tempDiv = document.createElement("div");
+      volantis.tempDiv.innerHTML = html;
+      let layoutHelper = document.querySelector("#layoutHelper-"+helper)
+      if (layoutHelper) {
+        if (clean) {
+          layoutHelper.innerHTML = ""
+        }
+        layoutHelper.append(volantis.tempDiv);
+      }
+    }
+    myhelper(helper, html, opt.clean)
+    if (opt.pjax) {
+      volantis.pjax.push(()=>{
+        myhelper(helper, html, opt.clean)
+      },"layoutHelper-"+helper)
+    }
+  }
+  /****************************** 滚动事件处理 ****************************************/
+  volantis.scroll = {
+    engine: new RunItem(),
+    unengine: new RunItem(),
+  };
+  volantis.scroll = Object.assign(volantis.scroll, {
+    push: volantis.scroll.engine.push,
+  });
+  // 滚动条距离顶部的距离
+  volantis.scroll.getScrollTop = () =>{
+    let scrollPos;
+    if (window.pageYOffset) {
+      scrollPos = window.pageYOffset;
+    } else if (document.compatMode && document.compatMode != 'BackCompat') {
+      scrollPos = document.documentElement.scrollTop;
+    } else if (document.body) {
+      scrollPos = document.body.scrollTop;
+    }
+    return scrollPos;
+  }
+  // 使用 requestAnimationFrame 处理滚动事件
+  // `volantis.scroll.del` 中存储了一个数值, 该数值检测一定时间间隔内滚动条滚动的位移, 数值的检测频率是浏览器的刷新频率. 数值为正数时, 表示向下滚动. 数值为负数时, 表示向上滚动.
+  volantis.scroll.handleScrollEvents = () => {
+    volantis.scroll.lastScrollTop = volantis.scroll.getScrollTop()
+    function loop() {
+      const scrollTop = volantis.scroll.getScrollTop();
+      if (volantis.scroll.lastScrollTop !== scrollTop) {
+        volantis.scroll.del = scrollTop - volantis.scroll.lastScrollTop;
+        volantis.scroll.lastScrollTop = scrollTop;
+        // if (volantis.scroll.del > 0) {
+        //   console.log("向下滚动");
+        // } else {
+        //   console.log("向上滚动");
+        // }
+        // 注销过期的unengine未滚动事件
+        volantis.scroll.unengine.list=[]
+        volantis.scroll.engine.start();
+      }else{
+        volantis.scroll.unengine.start();
+      }
+      volantis.requestAnimationFrame(loop)
+    }
+    volantis.requestAnimationFrame(loop)
+  }
+  volantis.scroll.handleScrollEvents()
+  volantis.scroll.ele = null;
+  // 触发页面滚动至目标元素位置
+  volantis.scroll.to = (ele, option = {}) => {
+    if (!ele) return;
+    volantis.scroll.ele = ele;
+    // 默认配置
+    opt = {
+      top: ele.getBoundingClientRect().top + document.documentElement.scrollTop,
+      behavior: "smooth"
+    }
+    // 定义配置
+    if ("top" in option) {
+      opt.top = option.top
+    }
+    if ("behavior" in option) {
+      opt.behavior = option.behavior
+    }
+    if ("addTop" in option) {
+      opt.top += option.addTop
+    }
+    if (!("observerDic" in option)) {
+      option.observerDic = 100
+    }
+    // 滚动
+    window.scrollTo(opt);
+    // 监视器
+    // 监视并矫正元素滚动到指定位置
+    // 用于处理 lazyload 引起的 cls 导致的定位失败问题
+    // option.observer = false
+    if (option.observer) {
+      setTimeout(() => {
+        if (volantis.scroll.ele != ele) {
+          return
+        }
+        volantis.scroll.unengine.push(() => {
+          let me = ele.getBoundingClientRect().top
+          if(!(me >= -option.observerDic && me <= option.observerDic)){
+            volantis.scroll.to(ele, option)
+          }
+          volantis.scroll.unengine.remove("unengineObserver")
+        },"unengineObserver")
+      },1000)
+    }
+  }
+  /********************** Content Visibility ********************************/
+  // 见 source/css/first.styl 如果遇到任何问题 删除 .post-story 即可
+  // 一个元素被声明 content-visibility 属性后 如果元素不在 viewport 中 浏览器不会计算其后代元素样式和属性 从而节省 Style & Layout 耗时
+  // content-visibility 的副作用: 锚点失效 等等(实验初期 暂不明确), 使用此方法清除样式
+  volantis.cleanContentVisibility = ()=>{
+    if (document.querySelector(".post-story")) {
+      console.log("cleanContentVisibility");
+      document.querySelectorAll(".post-story").forEach(e=>{
+        e.classList.remove("post-story")
+      })
+    }
+  }
+  /******************************************************************************/
+  /******************************************************************************/
+  /******************************************************************************/
+  //图像加载出错时的处理
+  function errorImgAvatar(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg";
+    img.onerror = null;
+  }
+  function errorImgCover(img) {
+    img.src = "https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg";
+    img.onerror = null;
+  }
+  /******************************************************************************/
+</script>
+
+  <!-- import head_end begin -->
+  <!-- import head_end end -->
+  <!-- Custom Files headEnd begin-->
+  
+  <!-- Custom Files headEnd end-->
+</head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <!-- import body_begin begin-->
+    <!-- import body_begin end-->
+    <!-- Custom Files bodyBegin begin-->
+    
+    <!-- Custom Files bodyBegin end-->
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+  <div class='container'>
+  <div id='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://i.328888.xyz/2022/12/17/4cTYQ.jpeg'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fa-solid fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+      
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fa-solid fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+      
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
+				
+				<li>
+          <a class="s-menu fa-solid fa-bars fa-fw" target="_self" href="/" onclick="return false;" title="menu"></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/" title="博客"
+                  
+                  
+                  
+                    active-action="action-home"
+                  >
+                  <i class='fa-solid fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tags/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tags"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/archives/" title="归档"
+                  
+                  
+                  
+                    active-action="action-archives"
+                  >
+                  <i class='fa-solid fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+
+      <!-- Custom Files header begin -->
+      
+      <!-- Custom Files header end -->
+		</div>
+	</div>
+  </div>
+</header>
+
+    <div id="l_body">
+      <div id="l_cover">
+  
+    
+      <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
+      <div id="none" class='cover-wrapper post search' style="display: none;">
+        
+  <div class='cover-bg lazyload placeholder' data-bg="https://i.328888.xyz/2022/12/17/4cF8k.jpeg"></div>
+
+<div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">Dragon</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="Search" />
+          <i class="icon fa-solid fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a href="/"
+              
+              
+              active-action="action-home">
+              <p>博客</p>
+            </a>
+          
+            <a href="/categories/"
+              
+              
+              active-action="action-categories">
+              <p>分类</p>
+            </a>
+          
+            <a href="/tags/"
+              
+              
+              active-action="action-tags">
+              <p>标签</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              active-action="action-about">
+              <p>关于</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+    
+  
+</div>
+
+      <div id="safearea">
+        <div class="body-wrapper">
+          
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/01/Java基础语法/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="龍">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="龍">
+    <meta itemprop="description" content="">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        Java基础语法
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Java/">Java</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-01-01T12:16:12+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年1月1日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="1-Java基础语法"><a href="#1-Java基础语法" class="headerlink" title="1.Java基础语法"></a>1.Java基础语法</h1><h4 id="1-1数据类型"><a href="#1-1数据类型" class="headerlink" title="1.1数据类型"></a>1.1数据类型</h4><h4 id="1-1-1基本数据类型"><a href="#1-1-1基本数据类型" class="headerlink" title="1.1.1基本数据类型"></a>1.1.1基本数据类型</h4><table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th>关键字</th>
+<th>内存占用</th>
+<th>取值范围</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">字节型</td>
+<td>byte</td>
+<td>1个字节</td>
+<td>-128~127</td>
+<td>0</td>
+</tr>
+<tr>
+<td align="center">短整型</td>
+<td>short</td>
+<td>2个字节</td>
+<td>-32768-32767</td>
+<td>0</td>
+</tr>
+<tr>
+<td align="center">整形</td>
+<td>int</td>
+<td>4个字节</td>
+<td>-2,147,483,648-2,147,483,647</td>
+<td>0</td>
+</tr>
+<tr>
+<td align="center">长整型</td>
+<td>long</td>
+<td>8个字节</td>
+<td>-9,223,372,036,854,775,808（-2^63）-9,223,372,036,854,775,807（2^63 -1）</td>
+<td>0</td>
+</tr>
+<tr>
+<td align="center">单精度浮点数</td>
+<td>float</td>
+<td>4个字节</td>
+<td>-2^31 - 2^31-1</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td align="center">双精度浮点数</td>
+<td>double</td>
+<td>8个字节</td>
+<td>-2^63 - 2^63-1</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td align="center">字符型</td>
+<td>char</td>
+<td>2个字节</td>
+<td>0 - 2^16-1</td>
+<td>\u0000</td>
+</tr>
+<tr>
+<td align="center">布尔型</td>
+<td>boolean</td>
+<td>1个字节</td>
+<td>true、false</td>
+<td>false</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="1-1-2引用数据类型"><a href="#1-1-2引用数据类型" class="headerlink" title="1.1.2引用数据类型"></a>1.1.2引用数据类型</h4><p>除了上面的基本数据类型，其他的都是数据类型都是引用类型，如<strong>字符串、数组、类、接口、Lambda</strong>。</p>
+<h4 id="1-1-3变量、常量"><a href="#1-1-3变量、常量" class="headerlink" title="1.1.3变量、常量"></a>1.1.3变量、常量</h4><p>变量–&gt;变化的量（程序运行期，内容可以发生改变的量），可以用英文字母来表示变量，a、b、c、d等等</p>
+<p>常量-&gt;不变的量，10、20、30</p>
+<p>注意事项：</p>
+<p>变量必须要有数据类型，且变量每次只保存一个值</p>
+<p>变量赋值后才能使用</p>
+<p>多个变量名不能重复</p>
+<h4 id="1-1-4数据类型的转换"><a href="#1-1-4数据类型的转换" class="headerlink" title="1.1.4数据类型的转换"></a>1.1.4数据类型的转换</h4><h5 id="1-1-4-A小转大、大转小"><a href="#1-1-4-A小转大、大转小" class="headerlink" title="1.1.4.A小转大、大转小"></a>1.1.4.A小转大、大转小</h5><p>小转大可以能够自动转换</p>
+<p>大转小需要强制转换且这个过程可能会出现数据溢出，即小数据类型放不下那么多，造成数据溢出。</p>
+<p>大转小语法：</p>
+<p>格式：范围小的类型 小范围变量名 &#x3D; （范围小的类型）原本范围大的数据类型</p>
+<p>long	—&gt;	int   大转小</p>
+<p>int num &#x3D;  （int）100L；</p>
+<h4 id="1-1-5运算符"><a href="#1-1-5运算符" class="headerlink" title="1.1.5运算符"></a>1.1.5运算符</h4><table>
+<thead>
+<tr>
+<th align="center">算数运算符</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td>略</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td>略</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td>略</td>
+</tr>
+<tr>
+<td align="center">&#x2F;</td>
+<td>除法运算符</td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td>取模运算符，两个数字相除取余数</td>
+</tr>
+<tr>
+<td align="center">++</td>
+<td>自增运算符</td>
+</tr>
+<tr>
+<td align="center">–</td>
+<td>自减运算符</td>
+</tr>
+</tbody></table>
+<p>+运算法常用用法</p>
+<p>一、对于数值来说就是加法</p>
+<p>二、对于字符char类型来说，在计算之前，char会被提升为int，然后再进行计算，char类型字符，和int类型数字，之间的对照关系表：ASCII、Unicode.</p>
+<p>三、对于字符串String来说，加好代表字符串的链接</p>
+<p>自增运算符++，</p>
+<p>自减运算符–，</p>
+<p>让一个变量增加一个数字1，或者ra减一个数字1。</p>
+<p>用法：例如num++，++num，num–，–num。</p>
+<p>单独使用：num++，++num没有区别。</p>
+<p>混合使用：</p>
+<p>A.如果是前++，++num，那么变量立刻+1，然后拿着结果进行使用。【先加后用】</p>
+<p>B.如果是后++，num++，那么首先使用变量本来的数值，然后再+1.【先用后加】</p>
+<p>例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">num1</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">System，out.println(num1++);<span class="comment">//21立刻加，然后再打印</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="variable">num2</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">System，out.println(++num2);<span class="comment">//20，用了之后再加，要是num再次打印，就会是21</span></span><br><span class="line"></span><br><span class="line">System，out.println(++num2);<span class="comment">//21</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-5-A赋值运算符"><a href="#1-1-5-A赋值运算符" class="headerlink" title="1.1.5.A赋值运算符"></a>1.1.5.A赋值运算符</h4><table>
+<thead>
+<tr>
+<th align="center">赋值运算符</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&#x3D;</td>
+<td>等于号，左变量，右值。int A&#x3D;20；</td>
+</tr>
+<tr>
+<td align="center">+&#x3D;</td>
+<td>加等于，a+&#x3D;     相当于  a&#x3D;a+1</td>
+</tr>
+<tr>
+<td align="center">-&#x3D;</td>
+<td>减等于，同上</td>
+</tr>
+<tr>
+<td align="center">*&#x3D;</td>
+<td>乘等于，同上</td>
+</tr>
+<tr>
+<td align="center">&#x2F;&#x3D;</td>
+<td>除等于，同上</td>
+</tr>
+<tr>
+<td align="center">%&#x3D;</td>
+<td>取模等，同上</td>
+</tr>
+</tbody></table>
+<h4 id="1-1-5-B逻辑运算符"><a href="#1-1-5-B逻辑运算符" class="headerlink" title="1.1.5.B逻辑运算符"></a>1.1.5.B逻辑运算符</h4><p>与（并且）&amp;&amp;</p>
+<p>或（或者）||</p>
+<p>非（取反）！</p>
+<table>
+<thead>
+<tr>
+<th align="center">逻辑运算符</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">与（并且</td>
+<td>&amp;&amp;</td>
+</tr>
+<tr>
+<td align="center">或（或者</td>
+<td>||</td>
+</tr>
+<tr>
+<td align="center">非（取反）</td>
+<td>！</td>
+</tr>
+</tbody></table>
+<h4 id="1-1-5-C逻辑语句"><a href="#1-1-5-C逻辑语句" class="headerlink" title="1.1.5.C逻辑语句"></a>1.1.5.C逻辑语句</h4><p><strong>一、判断语句if，if else ,if else if else.</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>（关系表达式<span class="literal">true</span>/fasle）&#123;</span><br><span class="line"></span><br><span class="line">语句体;<span class="comment">//true就执行语句体，false就不执行</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>二、选择语句swith</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">swith(表达式)&#123;</span><br><span class="line">case1 常量值1:</span><br><span class="line">语句体1;</span><br><span class="line">break;</span><br><span class="line"></span><br><span class="line">case2 常量值2:</span><br><span class="line">语句体2;</span><br><span class="line">break;</span><br><span class="line"></span><br><span class="line">case3 常量值3:</span><br><span class="line">语句体3;</span><br><span class="line">break;</span><br><span class="line">.....</span><br><span class="line">default</span><br><span class="line">语句体n+1；</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意事项</strong>：多个case后面的数值不可重复。</p>
+<p>**三、循环语句for、while、do..while，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始表达式;布尔表达式;步进表达式)&#123;</span><br><span class="line">循环体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(判断条件)&#123;</span><br><span class="line">	循环体;</span><br><span class="line">    步进语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">    循环体;</span><br><span class="line">    步进语句;</span><br><span class="line">&#125;<span class="keyword">while</span>(条件判断)</span><br></pre></td></tr></table></figure>
+
+<p>while跟do..while区别，while满足才会执行循环体，而do..while则会先执行一次循环体，再执行判断条件语句。</p>
+<p>确定次数用for，不确定用while</p>
+<p><strong>break关键字</strong></p>
+<p>1.可以用在switch语句中，一旦执行，整个switch语句立刻结束</p>
+<p>2.还可以用在循环语句中，一旦执行，整个循环语句立刻结束，打断循环。</p>
+<p><strong>continue关键字</strong></p>
+<p>1.一旦执行，立刻跳过当前循环剩余内容，马上开始下一次循环。</p>
+<h4 id="1-8方法的调用"><a href="#1-8方法的调用" class="headerlink" title="1.8方法的调用"></a>1.8方法的调用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">调用本类成员方法</span><br><span class="line"></span><br><span class="line">调用本类静态方法</span><br><span class="line"></span><br><span class="line">调用其他类成员方法</span><br><span class="line">new A().b();//非静态   （创建对象再调用方法）</span><br><span class="line"></span><br><span class="line">调用其他类静态方法</span><br><span class="line">A.a();//静态（类名.方法名）</span><br><span class="line"></span><br><span class="line">注：静态方法中不可以定义this，super关键字</span><br><span class="line"></span><br><span class="line">因为静态优先于对象存在，所以静态方法中不可以出现this，super关键字</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="1-8-1方法创建以及注意事项"><a href="#1-8-1方法创建以及注意事项" class="headerlink" title="1.8.1方法创建以及注意事项"></a>1.8.1方法创建以及注意事项</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span><span class="comment">//访问修饰符 static//关键字 void//返回类型 main//方法名（）&#123;&#125;；</span></span><br><span class="line">方法注意事项：</span><br><span class="line"><span class="number">1.</span>方法应该定义在类中</span><br><span class="line"><span class="number">2.</span>方法定义前后顺序无所谓</span><br><span class="line"><span class="number">3.</span>定义方法后并不会执行，调用才会执行。单独调用，赋值调用，打印调用</span><br><span class="line"><span class="number">4.</span>如果方法有返回值，那必须写上“<span class="keyword">return</span>”返回值</span><br><span class="line"><span class="number">5.</span>return后面的返回数据，必须和方法的返回值类型对应</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">methodname</span><span class="params">()</span>&#123;</span><br><span class="line">	方法体;</span><br><span class="line">    <span class="keyword">return</span> xxx</span><br><span class="line">        <span class="comment">//xxx跟int要对应</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-8-2方法重载"><a href="#1-8-2方法重载" class="headerlink" title="1.8.2方法重载"></a>1.8.2方法重载</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">对于功能类似，但是参数列表不一样，却要记住各种不一样的方法名，太麻烦。</span><br><span class="line">方法重载（Overload）：多个方法名一样，参数列表不一样，调用时  方法名+对应参数即可。method（参数）;</span><br><span class="line"></span><br><span class="line">方法重载与下列因素相关：</span><br><span class="line">1.参数个数不同</span><br><span class="line">2.参数类型不同</span><br><span class="line">3.参数的多类型顺序位置不同</span><br><span class="line"></span><br><span class="line">方法重载与下列因素无关：</span><br><span class="line">1.与参数的名称无关</span><br><span class="line">2.与方法的返回值类型无关</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-9引用数据类型"><a href="#1-9引用数据类型" class="headerlink" title="1.9引用数据类型"></a>1.9引用数据类型</h4><h5 id="1-9-1数组：一种容器，能同时存储多个数据，但只能存储同一种数据类型的数据。"><a href="#1-9-1数组：一种容器，能同时存储多个数据，但只能存储同一种数据类型的数据。" class="headerlink" title="1.9.1数组：一种容器，能同时存储多个数据，但只能存储同一种数据类型的数据。"></a>1.9.1数组：一种容器，能同时存储多个数据，但只能存储同一种数据类型的数据。</h5><p>1.引用数据类型</p>
+<p>2.能存多个数据，但类型必须统一</p>
+<p>3.数组的长度在运行期间不能改变</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">数组初始化：在内存当中创建一个数组，并且向其中赋予一些默认值</span><br><span class="line">两种常见的初始化方式</span><br><span class="line">1.动态初始化（指定长度）</span><br><span class="line">格式： 数据类型[] 数组名称 = new 数据类型[长度];</span><br><span class="line">例如: int[] arrayA = new int[10];  </span><br><span class="line">创建一个String数据类型的数组，能存放5个字符串  String[] arrayB = new String[5];</span><br><span class="line">2.静态初始化（指定内容）</span><br><span class="line">格式：数据类型[] 数组名 = 数据类型[]&#123;数据A，数据B,数据C，数据D&#125;;</span><br><span class="line">例如：int[] arrayC = new int[]&#123;1,2,3,4,5&#125;;</span><br><span class="line">静态初始化格式可以省略</span><br><span class="line">省略格式：数据类型[] 数组名 = &#123;数据A,数据B.....&#125;;</span><br><span class="line"></span><br><span class="line">数组访问：</span><br><span class="line">格式：数组名[索引值]</span><br><span class="line">arrayC[0]</span><br><span class="line"></span><br><span class="line">给数组赋值</span><br><span class="line">arrayA[0] = 1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">获取数组长度：</span><br><span class="line">数组名称.length</span><br></pre></td></tr></table></figure>
+
+<h5 id="对象数组"><a href="#对象数组" class="headerlink" title="对象数组"></a>对象数组</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Person是一个类</span><br><span class="line">//创建三个Person对象</span><br><span class="line">Person P0 = new Person();</span><br><span class="line">Person P1 = new Person();</span><br><span class="line">Person P2 = new Person();</span><br><span class="line">//创建对象数组</span><br><span class="line">Person[] array = new Person[3];</span><br><span class="line">//将对象放进对象数组里面</span><br><span class="line">array[0] = p0;</span><br><span class="line">array[1] = p1;</span><br><span class="line">array[2] = p2;</span><br><span class="line">数组有一个缺点：一旦创建，程序运行期间数组长度不可以改变；</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-9-2类"><a href="#1-9-2类" class="headerlink" title="1.9.2类"></a>1.9.2类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">定义格式;</span><br><span class="line">public class ClassName&#123;</span><br><span class="line">    成员变量;//属性</span><br><span class="line">    成员方法;//行为</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">标准类通常拥有四个组成部分：</span><br><span class="line">1.所有成员变量都必须要用private关键字修饰</span><br><span class="line">2.为每一个成员变量编写一堆Getter/Setter方法</span><br><span class="line">3.编写一个无参构造函数</span><br><span class="line">4.编写一个全参构造函数</span><br></pre></td></tr></table></figure>
+
+<p>标准类定义例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">public class Student &#123;</span><br><span class="line"></span><br><span class="line">    private  String name;//姓名</span><br><span class="line">    private  int age;//年龄</span><br><span class="line"></span><br><span class="line">    public Student() &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Student(String name, int age) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public abstract classs 类名&#123;</span><br><span class="line"></span><br><span class="line">&#125;//抽象类不能通过new来创建对象来使用</span><br><span class="line">//通过一个子类来继承抽象类，然后在new子类来实现抽象方法的调用，且需要重写抽象方法</span><br><span class="line">1.不能直接new抽象类对象</span><br><span class="line">2.必须用一个子类来继承抽象父类</span><br><span class="line">3.子类必须覆盖重写抽象父类中所有的抽象方法</span><br><span class="line">4.抽象类可以有抽象方法，也可以有非抽象的方法</span><br><span class="line">5.抽象类中可以有构造器，但是不能创建对象，空间需要由子类对象来开辟</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">抽象类不一定包含抽象方法，但是抽象方法必定在抽象类中;</span><br><span class="line">抽象类格式：</span><br><span class="line">public abstract class Animal &#123;</span><br><span class="line">    public abstract void run()；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">方法重载：在同一个类中，方法名相同，参数列表不同（参数位置、参数个数、参数类型），与返回值无关</span><br><span class="line"></span><br><span class="line">方法重写：在继承或实现的关系下，方法名相同，参数列表相同，返回值类型相同，子类的修饰权限要大于或等于父类中的修饰符权限</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">抽象类的特点：</span><br><span class="line">1，抽象方法一定在抽象类中。</span><br><span class="line">2，抽象方法和抽象类都必须被abstract关键字修饰。</span><br><span class="line">3，抽象类不可以用new创建对象。因为调用抽象方法没意义。</span><br><span class="line">4，抽象类中的抽象方法要被使用，必须由子类复写起所有的抽象方法后，建立子类对象调用。</span><br><span class="line">    如果子类只覆盖了部分抽象方法，那么该子类还是一个抽象类。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">抽象类和一般类没有太大的不同。</span><br><span class="line">该如何描述事物，就如何描述事物，只不过，该事物出现了一些看不懂的东西。</span><br><span class="line">这些不确定的部分，也是该事物的功能，需要明确出现。但是无法定义主体。</span><br><span class="line">通过抽象方法来表示。</span><br><span class="line"></span><br><span class="line">抽象类比一般类多个了抽象函数。就是在类中可以定义抽象方法。</span><br><span class="line">抽象类不可以实例化。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">特殊：抽象类中可以不定义抽象方法，这样做仅仅是不让该类建立对象。</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">修饰符 class 外部类名称&#123;</span><br><span class="line">修饰符 class 内部类名称</span><br><span class="line">&#125;</span><br><span class="line">内用外，随意访问；</span><br><span class="line">外用内，需要内部对象来访问</span><br><span class="line">外用内两种方法：</span><br><span class="line">1.间接访问：在外部类的方法中，new一个内部类对象出来，然后再调用内部类方法，main只是调用外部类的方法而已</span><br><span class="line">2.直接调用格式：</span><br><span class="line">外部类名称.内部类名称 对象名 = new外部类名称().new内部类名称();</span><br></pre></td></tr></table></figure>
+
+<h5 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">如果接口的实现类（或者父类的子类）只需要使用唯一的一次</span><br><span class="line">那么这种情况可以省略该类的定义，而使用匿名内部类</span><br><span class="line"></span><br><span class="line">匿名内部类格式：</span><br><span class="line">接口名称 对象名 = new 接口名称()&#123;</span><br><span class="line">//覆盖重写抽象方法</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">注意事项；</span><br><span class="line">1.匿名内部类在创建对象的时候，只能使用唯一的一次</span><br><span class="line">2.匿名对象，在调用方法时，只能调用唯一的一次</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">抽象方法:就是加上abstract关键字，然后去掉大括号，直接分号结束。//抽象方法必须在抽象类中</span><br><span class="line">public abstract void eat();</span><br></pre></td></tr></table></figure>
+
+<h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">接口：就是多个类的公共规范</span><br><span class="line">接口是一种引用数据类型，最重要的内容就是其中的 抽象方法</span><br><span class="line">接口定义格式：</span><br><span class="line">public interface 接口名称&#123;</span><br><span class="line">接口内容</span><br><span class="line">&#125;//接口编译生成的字节码文件依然是.class，</span><br><span class="line">接口包含的内容有：</span><br><span class="line">1.常量</span><br><span class="line">接口当中也可以定义“成员变量”，但必须使用public static final三个关键字来进行修饰</span><br><span class="line">格式:</span><br><span class="line">public static final 数据类型 常量名称 = 数据值;</span><br><span class="line">可以省略三个关键字。</span><br><span class="line"></span><br><span class="line">注意事项</span><br><span class="line">接口当中的常量必须赋值，不能不赋值。</span><br><span class="line">不可修改，因为有final修饰</span><br><span class="line">接口常量一般用大写常量名称命名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.抽象方法</span><br><span class="line">public abstract 返回值类型 方法名称（参数列表）;</span><br><span class="line">接口当中的抽象方法，修饰符必须是两个固定的关键字：public abstract//这两个关键字可以省略</span><br><span class="line"></span><br><span class="line">3.默认方法</span><br><span class="line">public default 返回值类型 方法名称（参数列表）&#123;方法体&#125;;</span><br><span class="line">默认方法是为了解决接口升级问题</span><br><span class="line">接口默认方法可以通过创建实现类对象来使用</span><br><span class="line">接口的默认方法也可以被接口实现类进行覆盖重写</span><br><span class="line"></span><br><span class="line">4.静态方法</span><br><span class="line">public static 返回值类型 方法名称 （参数列表）&#123;</span><br><span class="line">方法体</span><br><span class="line">&#125;</span><br><span class="line">不能通过接口实现类对象来调用静态方法</span><br><span class="line">正确调用方法： 接口名称.静态方法（参数）; //这样即可</span><br><span class="line">5.私有方法</span><br><span class="line"></span><br><span class="line">接口使用步骤：</span><br><span class="line">1.接口不能直接使用，需要一个“实现类”来实现接口（跟抽象类相似）</span><br><span class="line">格式：</span><br><span class="line">public class 实现类名称 implements 接口名称&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">2.实现类必须重写接口的所有抽象方法</span><br><span class="line">实现：去掉abstract 关键字，加上方法体大括号</span><br><span class="line">3.创建实现类对象，进行使用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">注意事项</span><br><span class="line">1.接口没有静态代码块和构造方法</span><br><span class="line">2.一个类只能有一个父类，但是一个类可以有多个接口</span><br><span class="line">3.实现类实现多个接口时，存在重复的的抽象方法时，只需要重写一次即可</span><br><span class="line">4.如果实现类没有覆盖接口中所有的抽象方法，那么实现类必须是一个抽象类</span><br><span class="line">5.一个类如果直接父类当中的方法，和接口的默认方法产生冲突，那么优先使用父类的方法</span><br><span class="line"></span><br><span class="line">接口可以多继承，接口a extends 接口b，接口c</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-9-3对象"><a href="#1-9-3对象" class="headerlink" title="1.9.3对象"></a>1.9.3对象</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">通常情况下，类不能直接使用，需要根据类创建一个对象。类实例化为一个对象</span><br><span class="line">使用格式：</span><br><span class="line">1.导包:指出使用的类在上面位置</span><br><span class="line">import 包名.类名.;</span><br><span class="line">对于当前类属于同一个包，可以省略导包语句</span><br><span class="line">2.创建，格式：</span><br><span class="line">类名 对象名 = new 类名（）;</span><br><span class="line">3.使用，分两种情况</span><br><span class="line">使用成员变量:对象名.成员变量</span><br><span class="line">使用成员方法:对象名.成员方法（）</span><br><span class="line"></span><br><span class="line">匿名对象：没有名字的对象 new 对象名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="对象的向上转型："><a href="#对象的向上转型：" class="headerlink" title="对象的向上转型："></a>对象的向上转型：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式： 父类名称 对象名 = new 子类名称； Animal animal = new Cat();</span><br><span class="line">含义：右侧创建一个子类对象，把它当做父类来看待使用</span><br><span class="line">向上转型是安全的（跟数据类型的小转大 类似）</span><br><span class="line">但是这样就无法调用子类原本特有的内容，解决办法就是 对象的向下转型</span><br></pre></td></tr></table></figure>
+
+<h6 id="对象的向下转型："><a href="#对象的向下转型：" class="headerlink" title="对象的向下转型："></a>对象的向下转型：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">向下转型：相当于起还原作用</span><br><span class="line">格式：</span><br><span class="line">子类名称 对象名 = （子类名称）父类对象名;    Cat cat = (Cat) annimal;</span><br><span class="line">将父类对象还原成本来的子类对象</span><br><span class="line"></span><br><span class="line">注意事项：</span><br><span class="line">a.必须保证对象本来创建的时候，就是猫，才能向下转型成为猫</span><br><span class="line">b.如果对象创建的时候本来不是猫，现在非要向下转型为猫，就会报错。</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果才能知道父类引用的对象，本来子类是什么呢？</span><br><span class="line">格式：</span><br><span class="line">对象 instanceof 类名称	</span><br><span class="line">返回boolean值结果，这就能判断前面的对象能不能当做后面的类型的实例</span><br></pre></td></tr></table></figure>
+
+<p>局部变量与成员变量区别</p>
+<p><strong>.定义的位置不一样</strong></p>
+<ul>
+<li>局部变量：在方法的内部</li>
+<li>成员变量：在方法的外部，直接写在类当中</li>
+</ul>
+<p><strong>.作用范围不一样</strong></p>
+<ul>
+<li>局部变量：只有方法当中才可以使用，出了方法就不能再用了</li>
+<li>成员变量：整个类都可以通用</li>
+</ul>
+<p><strong>.默认值不一样</strong></p>
+<ul>
+<li>局部变量：没有默认值，如果要想使用，必须手动进行赋值</li>
+<li>成员变量：如果没有赋值，会有默认值，规则和数组一样</li>
+</ul>
+<p>.<strong>内存的位置不一样</strong></p>
+<ul>
+<li>局部变量：位于栈内存</li>
+<li>成员变量：位于堆内存</li>
+</ul>
+<p><strong>1.9.4关键字</strong></p>
+<p><strong>关键字private</strong>，只能在当前类中访问。可以用set、get方法来访问。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个成员方法专门用于向age设置数值</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> Age; </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> num)</span>&#123;</span><br><span class="line">    age = num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这个成员方法专门用于获取age设置数值</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="关键字this"><a href="#关键字this" class="headerlink" title="关键字this"></a><strong>关键字this</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">当方法的局部变量和成员变量名称重名的时候，根据就近原则，优先使用局部变量。</span><br><span class="line">如果需要访问本类中的成员变量，需要使用格式：</span><br><span class="line">this.成员变量名</span><br><span class="line">“通过谁调用的方法，谁就是this”</span><br></pre></td></tr></table></figure>
+
+<p><strong>static关键字</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">静态成员变量：如果一个成员变量用static关键字修饰，那么该成员变量不会单独属于一个对象，而是属于所在类，共享同一份数据</span><br><span class="line">静态成员方法：一旦使用static修饰成员方法，那么该方法就成为静态方法，不属于对象，属于类</span><br><span class="line">如果没有static关键字，需要出创建对象之后，再通过对象来能调用方法。</span><br><span class="line">而有static关键字的方法，可以直接通过类名.方法名 来调用该方法</span><br><span class="line"></span><br><span class="line">注意事项：</span><br><span class="line">静态不能访问非静态，因为静态会先加载，非静态后加载，当静态中访问非静态时，非静态还没有创建出来，这样就会报错。</span><br><span class="line">非静态可以访问静态，静态不能访问非静态</span><br><span class="line">先有静态内容才有非静态内容</span><br><span class="line">成员方法可以访问成员变量</span><br><span class="line">成员方法可以访问静态变量</span><br><span class="line">静态方法不可以访问非静态变量</span><br><span class="line">静态方法可以访问静态变量</span><br></pre></td></tr></table></figure>
+
+<p><strong>关键字extends</strong>（继承）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">public class 子类名称 extends 父类名称&#123;&#125;</span><br><span class="line">子类会继承父类方法、变量</span><br><span class="line">父、子变量重名时，左边等号是谁就有优先用谁，没有就往上找。就近原则</span><br></pre></td></tr></table></figure>
+
+<h5 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">一个对象拥有多个形态，这就是对象的多态性</span><br><span class="line"></span><br><span class="line">格式：左父右子</span><br><span class="line">父类名称Person 对象名 = new Student子类名称();//多态</span><br><span class="line">或者</span><br><span class="line">接口名 对象名 = new 实现类名称();//多态</span><br><span class="line"></span><br><span class="line">多态代码访问成员变量：</span><br><span class="line">直接通过对象名称访问成员变量：看等号左边是谁，优先用谁，没有则向上找。</span><br><span class="line">间接通过成员方法访问成员变量：看该方法属于谁，优先用谁，没有则向上找</span><br><span class="line"></span><br><span class="line">在多态代码中，成员方法的访问规则是：</span><br><span class="line">new的是谁，就优先用谁，没有则向上找</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">父子重名时，通过super就能访问父类的成员变量或者方法了</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">重写：</span><br><span class="line">概念：在继承关系中，方法的名称一样，参数列表也一样</span><br><span class="line">跟重载不一样，重载方法名一样参数列表不一样</span><br><span class="line"></span><br><span class="line">方法的重写：</span><br><span class="line">1.父子方法名要相同参数列表也要相同</span><br><span class="line">2.子类方法的返回值必须小于等于父类方法的返回值范围</span><br><span class="line"></span><br><span class="line">子类的构造方法中，有一个默认隐含的super（）调用，编译器赠送的</span><br></pre></td></tr></table></figure>
+
+<h5 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">常见四种用法：</span><br><span class="line">1.修饰一个类</span><br><span class="line">public final class 类名称&#123;&#125; </span><br><span class="line">final修饰的类不能有子类，但可以有父类（太监类）</span><br><span class="line"></span><br><span class="line">2.修饰一个方法</span><br><span class="line">修饰符 final 返回值类型 方法名称（参数列表）&#123;</span><br><span class="line">方法体</span><br><span class="line">&#125;</span><br><span class="line">abstract跟final互斥，abstract没有方法体，而abstract要用就要覆盖重写这个抽象方法。</span><br><span class="line"></span><br><span class="line">3.修饰一个局部变量</span><br><span class="line">只能赋值一次，不能多次赋值。</span><br><span class="line">对于基本数据类型来说，数据不可改变</span><br><span class="line">对于引用数据类型来说，地址不可改变</span><br><span class="line"></span><br><span class="line">4.修饰一个成员变量</span><br><span class="line">成员变量有默认值，因此final修饰必须手动赋值或者构造方法赋值</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-9-5构造方法"><a href="#1-9-5构造方法" class="headerlink" title="1.9.5构造方法"></a>1.9.5构造方法</h5><p>构造方法就是用来专门创造对象用的，当我们new一个对象时，用的就是构造方法，这个方法每个类都有，只是java默认给了一个空参的构造方法而已，因此我们不用专门来写，但是当我们写了一个构造方法时，系统就不会默认再给一个空参的构造方法了，而是需要我们自己写一个。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pubcli 类名称（参数类型 参数形成）&#123;</span><br><span class="line">方法体;</span><br><span class="line">&#125;</span><br><span class="line">注意：</span><br><span class="line">1.构造方法的名称必须和类名完全一致，当然也包括大小写。</span><br><span class="line">2.构造方法不需要写返回值类型，void都不需要</span><br><span class="line">3.构造方法不能有return</span><br><span class="line">4.如果没有编写任何的构造方法，那么编译器会自动赠送一个没有参数没有方法体的一个构造函数</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-9-6-各种常用类"><a href="#1-9-6-各种常用类" class="headerlink" title="1.9.6 各种常用类"></a>1.9.6 各种常用类</h5><p><strong>Scanner类</strong></p>
+<p>一个可以解析基本类型和字符串的简单文本扫描器</p>
+<p>使用步骤</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Scanner sc = new Scanner(System.in);//System.in系统输入指定的是通过键盘录入数据</span><br><span class="line">int i = sc.nextInt()；</span><br><span class="line">使用Scanner这个类时，需要导包</span><br><span class="line">导包  </span><br><span class="line">创建 Scanner sc = new Scanner（）</span><br><span class="line">使用 String a = sc.next（）；</span><br><span class="line">Scanner类有很多成员方法，使用是查文档即可</span><br></pre></td></tr></table></figure>
+
+<p><strong>Random类</strong></p>
+<p>用来生成随机数字，使用步骤同上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Random r = new Random();</span><br><span class="line">int num = r.nextInt();//获取一个随机的int数字（范围是int所有范围，有正负两种）</span><br><span class="line">获取随机数int，参数代表范围，左闭右开区间，int num = r.nextInt(3); nextInt(3)指-&gt;[0,3),左边能取到，右边不行.能取到0，取不到3 </span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="String字符串"><a href="#String字符串" class="headerlink" title="String字符串"></a>String字符串</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">程序中所有的双引号字符串，都是String类的对象。（就算没有new，照样也是）</span><br><span class="line">字符串特点：</span><br><span class="line">1.字符串的内容永远都不可以改变。【重点】</span><br><span class="line">2.正是因为字符串不可以改变，所以字符串可以共享使用。</span><br><span class="line">3.字符串效果上相当于char[]字符数组，但是底层原理是byte[]字节数组</span><br><span class="line"></span><br><span class="line">创建字符串的常见四种方式：</span><br><span class="line">三种构造方法：</span><br><span class="line">1.public String();创建一个空白字符串，不含有任何内容。</span><br><span class="line">String str1 = new String();</span><br><span class="line"></span><br><span class="line">2.public String(char[] array):根据字符数组的内容，来创建对应的字符串。</span><br><span class="line">char[] charArray = &#123;&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;&#125;;</span><br><span class="line">String str2 = new String(charArray);</span><br><span class="line"></span><br><span class="line">3.public String(byte[] array):根据字节数组的内容，来创建对应的字符串。</span><br><span class="line"></span><br><span class="line">byte[] byteArray = &#123;1,2,3,4,5&#125;;</span><br><span class="line">String str3 = new String(byteArray);</span><br><span class="line"></span><br><span class="line">一种直接创建</span><br><span class="line">String str = &quot;hello&quot;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="String字符串常量池"><a href="#String字符串常量池" class="headerlink" title="String字符串常量池"></a>String字符串常量池</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">用String str = &quot;AAa&quot;;这样方式写的String字符串，就会在字符串常量池中。</span><br><span class="line">扩展//对于基本数据类型来说  ==是进行数值的比较</span><br><span class="line">	//对于引用数据类型来说 ==是进行地址值的比较</span><br><span class="line">	</span><br><span class="line">字符串比较方法：</span><br><span class="line">public boolean equals(Object obj);参数可以使任何对象，只有参数是一个字符串并且内容相同的才会返回true，否则返回false</span><br><span class="line">任何对象都可以用Object进行接收</span><br><span class="line">String str1 = &quot;aaa&quot;;</span><br><span class="line">String str2 = &quot;bbb&quot;;</span><br><span class="line">System.out.println(str1.equals(str2));//true	不推荐这种写法，放str1为null时，该写法会报错，error空指针异常</span><br><span class="line">System.out.println(&quot;aaa&quot;.equals(str1));//true  推荐这种写法</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">字符串当中与获取的常用方法：</span><br><span class="line">public int Length();//获取字符串中含有的字符个数，拿到字符串长度</span><br><span class="line">public String concat（String str）;//将当前字符串和参数字符串拼接成返回值新的字符串</span><br><span class="line">public char charAt（int index）;//获取当前指定索引位置的单个字符（索引从0开始）</span><br><span class="line">public int indexOf（String str）;//查找参数字符串在本字符串当中首次出现的索引位置，没有返回-1值  </span><br><span class="line"></span><br><span class="line">字符串截取方法：</span><br><span class="line">public String substring（int index）;// 截取从参数位置一直到字符串末尾，返回新字符串</span><br><span class="line">public String substring（int begin，int end）//截取从begin开始，一直到end结束，中间的字符串，注意是左闭右开，[)。</span><br><span class="line"></span><br><span class="line">字符串转换常用方法有：</span><br><span class="line">public char[] toCharArray();//将当前字符串拆分为字符数组作为返回值。</span><br><span class="line">public byte[] getBytes();//获得当前字符串底层的字节数组；</span><br><span class="line">public String replace(CharSequence oldString,CharSequence newString);//将所有出现的老字符串替换称为新的字符串，返回替换之后的结果新字符串</span><br><span class="line"></span><br><span class="line">字符串分隔方法：</span><br><span class="line">public String [] split(String regex);//按照参数规则，将字符串切分成为若干部分。切出来各个部分放到一个数组里面存放</span><br><span class="line">例如：</span><br><span class="line">		String a = &quot;aaa,bbb,ccc&quot;;</span><br><span class="line">        System.out.println(a.split(&quot;,&quot;)[0]);//aaa</span><br><span class="line">        System.out.println(a.split(&quot;,&quot;)[1]);//bbb</span><br><span class="line">        System.out.println(a.split(&quot;,&quot;)[2]);//ccc</span><br><span class="line">        </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h5><p>是一个与数组相关的工具类，里面有大量<strong>静态方法</strong>，用来实现数组常见操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static String toString（数组）://将参数数组变成字符串</span><br><span class="line">public Static void sort(数组);//给数组升序排序</span><br><span class="line">sort方法注意：</span><br><span class="line">1.如果是数字，sort默认升序排序</span><br><span class="line">2.如果是字符串，sort默认按字母升序</span><br><span class="line">3.如果是自定义类型，那么自定义的类需要有Comparalbe或者Comparator接口支持 </span><br></pre></td></tr></table></figure>
+
+<h5 id="Math数学工具类"><a href="#Math数学工具类" class="headerlink" title="Math数学工具类"></a>Math数学工具类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上网搜</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object类有一个toString方法，Object是顶尖类</span><br><span class="line">String toString方法：返回该对象的字符表示，println（f）,其实就是在调用p.toString()方法而已</span><br><span class="line"></span><br><span class="line">boolean equals方法：指定其他某个对象是否与此对象“相等”</span><br><span class="line">==比较基本数据类型时，比较的是数据值</span><br><span class="line">==比较引用数据类型时，比较的是地址值</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">构造方法：</span><br><span class="line">Date();获取的就是当前系统的日期和时间</span><br><span class="line">Date(Long date);传递毫秒值，把毫秒值转换为Date日期</span><br><span class="line"></span><br><span class="line">Date();成员方法</span><br><span class="line"></span><br><span class="line">getTime()把日期转换为毫秒（相当于System.currentTimeMillis()）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="DateFormat类"><a href="#DateFormat类" class="headerlink" title="DateFormat类"></a>DateFormat类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">format（格式化的意思）</span><br><span class="line">格式化（也就是日期---&gt;文本）  解析（就是文本---&gt;日期）</span><br><span class="line">DateFormat类是一个抽象类，无法直接创建对象使用，可以使用DateFormat的子类</span><br><span class="line">其子类有 SimpleDateFormat</span><br><span class="line"></span><br><span class="line">DateFormat类的常用成员方法：</span><br><span class="line">String format（Date date）按照指定的模式，把Date日期，格式化为符合模式的字符串</span><br><span class="line">Date parse（String source）把符合模式的字符串，解析成为Date日期</span><br><span class="line"></span><br><span class="line">SimpleDateFormat类的构造方法</span><br><span class="line">SimpleDateFormat(String pattern);用指定的模式和默认语言环境的日期符号构造SimpleDateFormat</span><br><span class="line">参数</span><br><span class="line">	String pattern</span><br><span class="line">	模式：区分大小写</span><br><span class="line">	y年	M月	d日	H时	m分	s秒</span><br><span class="line">	写对应模式，会把模式替换成对应的日期和时间,例如</span><br><span class="line">	“yyyy MM dd HH:mm:ss”</span><br><span class="line">	&quot;yyyy年MM月dd日HH时：mm分：ss秒&quot;</span><br><span class="line">	模式中的字母不能更改，连接符号可以更改</span><br><span class="line">	代码如下：</span><br><span class="line">		Date date = new Date();</span><br><span class="line">        System.out.println(date);</span><br><span class="line">        SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy年MM月dd日HH时:mm分:ss秒&quot;);</span><br><span class="line">        String text = sdf.format(date);</span><br><span class="line">        System.out.println(text);</span><br><span class="line">        </span><br><span class="line"> Date parse（String source）把符合模式的字符串，解析成为Date日期</span><br><span class="line"> parse声明了一个异常叫ParseException，如果字符串和构造方法的模式不一样，那么程序就会抛出异常</span><br><span class="line"> （调用一个抛出异常的方法，就必须处理这个异常，要么throws继续声明抛出这个异常，要么try&#123;&#125;catch()&#123;&#125;自己处理这个异常）</span><br><span class="line"> 使用parse方法代码如下：</span><br><span class="line"> SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy年MM月dd日HH时:mm分:ss秒&quot;);</span><br><span class="line"> String test = &quot;2077年07月17日17时:22分:45秒&quot;;</span><br><span class="line"> Date aa = sdf.parse(test);</span><br><span class="line"> System.out.println(aa);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="Calendar类-日历类"><a href="#Calendar类-日历类" class="headerlink" title="Calendar类(日历类)"></a>Calendar类(日历类)</h5><p>Calendar类是抽象类</p>
+<p>该类将所有可能用到的时间信息封装成静态成员变量，方便获取。日历类就是方便获取各个时间属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> // 使用默认时区和语言环境获得一个日历</span><br><span class="line"> Calendar类无法创建对象使用，里面有个静态方法叫getIntstance()，该方法返回Calendar类的子类对象</span><br><span class="line">    Calendar cal = Calendar.getInstance();  //多态</span><br><span class="line">    </span><br><span class="line">    Calendar类常用的四个方法</span><br><span class="line">    public int get(int field):返回给定日历字段的值</span><br><span class="line">    public void set(int field,int value):将给定的日历字段设置为给定的值</span><br><span class="line">    public abstract void add(int field,int amount):根据日历规则，为给定的日历字段添加或者减去指定的时间量</span><br><span class="line">    public Date getTime():返回一个表示Calendar时间值的Date对象</span><br><span class="line">    </span><br><span class="line">获取时间</span><br><span class="line">    // 赋值时年月日时分秒常用的6个值，注意月份下标从0开始，所以取月份要+1</span><br><span class="line">    System.out.println(&quot;年:&quot; + cal.get(Calendar.YEAR));</span><br><span class="line">    System.out.println(&quot;月:&quot; + (cal.get(Calendar.MONTH) + 1));       </span><br><span class="line">    System.out.println(&quot;日:&quot; + cal.get(Calendar.DAY_OF_MONTH));</span><br><span class="line">    System.out.println(&quot;时:&quot; + cal.get(Calendar.HOUR_OF_DAY));</span><br><span class="line">    System.out.println(&quot;分:&quot; + cal.get(Calendar.MINUTE));</span><br><span class="line">    System.out.println(&quot;秒:&quot; + cal.get(Calendar.SECOND));</span><br><span class="line"></span><br><span class="line">设置时间</span><br><span class="line">	Calendar cal = Calendar.getInstance();</span><br><span class="line">    // 如果想设置为某个日期，可以一次设置年月日时分秒，由于月份下标从0开始赋值月份要-1</span><br><span class="line">    // cal.set(year, month, date, hourOfDay, minute, second);</span><br><span class="line">    cal.set(2018, 1, 15, 23, 59, 59);</span><br><span class="line"></span><br><span class="line">单个字段一一设置</span><br><span class="line">// 或者6个字段分别进行设置，由于月份下标从0开始赋值月份要-1</span><br><span class="line">    cal.set(Calendar.YEAR, 2018);</span><br><span class="line">    cal.set(Calendar.MONTH, Calendar.FEBRUARY);</span><br><span class="line">    cal.set(Calendar.DAY_OF_MONTH, 15);</span><br><span class="line">    cal.set(Calendar.HOUR_OF_DAY, 23);</span><br><span class="line">    cal.set(Calendar.MINUTE, 59);</span><br><span class="line">    cal.set(Calendar.SECOND, 59);</span><br><span class="line">    System.out.println(cal.getTime());</span><br><span class="line">    </span><br><span class="line">时间计算</span><br><span class="line">	Calendar cal = Calendar.getInstance();</span><br><span class="line">    System.out.println(cal.getTime());</span><br><span class="line">    cal.set(2018, 1, 15, 23, 59, 59);</span><br><span class="line">    cal.add(Calendar.SECOND, 1);</span><br><span class="line">    System.out.println(cal.getTime());</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1&gt;.获取系统当前毫秒值（public static long currentTimeMillis()）</span><br><span class="line">2&gt;. System类方法复制数组（public static notive void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)）【notive 是可以调用当前操作系统来实现数组拷贝的】</span><br><span class="line"></span><br><span class="line"> 　　用来实现将源数组部分元素复制到目标数组的指定位置。各个参数功能如下：</span><br><span class="line"></span><br><span class="line">　　Object src：要复制的原数组；</span><br><span class="line"></span><br><span class="line">　　Int srcPos：数组源的起始索引；</span><br><span class="line"></span><br><span class="line">　　Object dest：复制后的目标数组；</span><br><span class="line"></span><br><span class="line">　　int destPos：目标数组起始索引；</span><br><span class="line"></span><br><span class="line">　　int length，指定复制的长度；</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">由于String类的对象内容不可改变，所以每当进行字符串拼接的时候，总是会在内存中创建一个新的对象。</span><br><span class="line">原来StringBuilder是个字符串的缓冲区，即它是一个容器，容器中可以装很多字符串。并且能够对其中的字符串进行各种操作。</span><br><span class="line"></span><br><span class="line">构造方法：</span><br><span class="line">public StringBuilder():构造一个空的StringBuilder容器</span><br><span class="line">public StringBuilder（String str）：构造一个StringBuilder容器，并将字符串添加进去</span><br><span class="line"></span><br><span class="line">常用方法：</span><br><span class="line"></span><br><span class="line">public StringBuilder append（…）：添加任意类型数据的字符串形式，并返回当前对象自身。</span><br><span class="line">public String toString（…）：将当前StringBuilder对象转换为String对象。</span><br></pre></td></tr></table></figure>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-15T00:27:21+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年2月15日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%90%8E%E7%AB%AF/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>后端</p></a></div>
+  <span hidden itemprop="keywords">Java 后端</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/&title=Java基础语法 - 龍&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/&title=Java基础语法 - 龍&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/&title=Java基础语法 - 龍&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/01/01/Java%20IO%E6%B5%81/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Java IO流</p>
+          <p class='content'>5.IO流IO流常用基类字节流的抽象基类：
+InputStream ，OutputStream。
+字符流的抽象基类：
+Reader ， Writer。
+File类Java文件类以抽象的方式代表文...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/01/01/Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/'>
+          <p class='title'>Java网络编程<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>6.网络编程java中，提供了两个了类用于实现TCP通信程序：
+客户端：java.net.Socket类表示。创建Socket对象，向服务器发出连接请求，服务器响应请求，两者建立连接开始通信
+服...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2021/01/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+  
+
+  
+    
+    
+      
+    
+  
+
+
+<div class="widget-sticky pjax">
+
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.1数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.1.1基本数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.1.2引用数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3%E5%8F%98%E9%87%8F%E3%80%81%E5%B8%B8%E9%87%8F"><span class="toc-text">1.1.3变量、常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-text">1.1.4数据类型的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-1-4-A%E5%B0%8F%E8%BD%AC%E5%A4%A7%E3%80%81%E5%A4%A7%E8%BD%AC%E5%B0%8F"><span class="toc-text">1.1.4.A小转大、大转小</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-5%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">1.1.5运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-5-A%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">1.1.5.A赋值运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-5-B%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">1.1.5.B逻辑运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-5-C%E9%80%BB%E8%BE%91%E8%AF%AD%E5%8F%A5"><span class="toc-text">1.1.5.C逻辑语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8"><span class="toc-text">1.8方法的调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8-1%E6%96%B9%E6%B3%95%E5%88%9B%E5%BB%BA%E4%BB%A5%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">1.8.1方法创建以及注意事项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8-2%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD"><span class="toc-text">1.8.2方法重载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">1.9引用数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9-1%E6%95%B0%E7%BB%84%EF%BC%9A%E4%B8%80%E7%A7%8D%E5%AE%B9%E5%99%A8%EF%BC%8C%E8%83%BD%E5%90%8C%E6%97%B6%E5%AD%98%E5%82%A8%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE%EF%BC%8C%E4%BD%86%E5%8F%AA%E8%83%BD%E5%AD%98%E5%82%A8%E5%90%8C%E4%B8%80%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E3%80%82"><span class="toc-text">1.9.1数组：一种容器，能同时存储多个数据，但只能存储同一种数据类型的数据。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84"><span class="toc-text">对象数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9-2%E7%B1%BB"><span class="toc-text">1.9.2类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-text">成员内部类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="toc-text">匿名内部类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="toc-text">抽象方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9-3%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.9.3对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97this"><span class="toc-text">关键字this</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E6%80%81"><span class="toc-text">多态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">super关键字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#final%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">final关键字</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9-5%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-text">1.9.5构造方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-9-6-%E5%90%84%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%B1%BB"><span class="toc-text">1.9.6 各种常用类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#String%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">String字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#String%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="toc-text">String字符串常量池</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Arrays%E7%B1%BB"><span class="toc-text">Arrays类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Math%E6%95%B0%E5%AD%A6%E5%B7%A5%E5%85%B7%E7%B1%BB"><span class="toc-text">Math数学工具类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Object%E7%B1%BB"><span class="toc-text">Object类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Date%E7%B1%BB"><span class="toc-text">Date类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#DateFormat%E7%B1%BB"><span class="toc-text">DateFormat类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Calendar%E7%B1%BB-%E6%97%A5%E5%8E%86%E7%B1%BB"><span class="toc-text">Calendar类(日历类)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#System%E7%B1%BB"><span class="toc-text">System类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#StringBuilder%E7%B1%BB"><span class="toc-text">StringBuilder类</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
+</div>
+
+
+<!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <!-- Custom Files side begin -->
+  
+  <!-- Custom Files side end -->
+</aside>
+
+
+
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+<pjax>
+<script>
+  window.pdata={}
+  pdata.ispage=true;
+  pdata.commentPath="";
+  pdata.commentPlaceholder="";
+  pdata.commentConfig={};
+  //  see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs
+  
+    // header
+    var l_header=document.getElementById("l_header");
+    
+    l_header.classList.add("show");
+    
+    
+      // cover
+      var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
+      var scroll_down=document.getElementById('scroll-down');
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
+    
+  
+</script>
+</pjax>
+        </div>
+        
+  
+  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='true'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='true'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='958147085'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          
+            
+              <a href="mailto:857134647@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+            
+              <a href="https://github.com/chiwuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer" itemprop="url">
+                
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2021 Volantis</a></p>
+
+        </div>
+      
+    
+    <!-- Custom Files footer begin-->
+    
+    <!-- Custom Files footer end-->
+  </footer>
+
+
+        <a id="s-top" class="fa-solid fa-arrow-up fa-fw" href="/" onclick="return false;" title="top"></a>
+      </div>
+    </div>
+    <div>
+      <script>
+  /******************** volantis.dom ********************************/
+  // 页面选择器 将dom对象缓存起来 see: /source/js/app.js etc.
+  volantis.dom.bodyAnchor = volantis.dom.$(document.getElementById("safearea")); // 页面主体
+  volantis.dom.topBtn = volantis.dom.$(document.getElementById('s-top')); // 向上
+  volantis.dom.wrapper = volantis.dom.$(document.getElementById('wrapper')); // 整个导航栏
+  volantis.dom.coverAnchor = volantis.dom.$(document.querySelector('#l_cover .cover-wrapper')); // 1个
+  volantis.dom.switcher = volantis.dom.$(document.querySelector('#l_header .switcher .s-search')); // 搜索按钮   移动端 1个
+  volantis.dom.header = volantis.dom.$(document.getElementById('l_header')); // 移动端导航栏
+  volantis.dom.search = volantis.dom.$(document.querySelector('#l_header .m_search')); // 搜索框 桌面端 移动端 1个
+  volantis.dom.mPhoneList = volantis.dom.$(document.querySelectorAll('#l_header .m-phone .list-v')); //  手机端 子菜单 多个
+</script>
+
+<script>
+  
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fortawesome/fontawesome-free/css/all.min.css");
+  
+  
+  
+</script>
+
+<!-- required -->
+
+
+<!-- internal -->
+
+<script src="/js/app.js"></script>
+
+
+
+
+
+
+<!-- rightmenu要在darkmode之前（ToggleButton） darkmode要在comments之前（volantis.dark.push）-->
+
+
+
+<script>
+  function loadIssuesJS() {
+    
+      const sites_api = document.getElementById('sites-api');
+      if (sites_api != undefined && typeof SitesJS === 'undefined') {
+        volantis.js("/js/plugins/tags/sites.js")
+      }
+    
+    
+      const friends_api = document.getElementById('friends-api');
+      if (friends_api != undefined && typeof FriendsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/friends.js")
+      }
+    
+    
+      const contributors_api = document.getElementById('contributors-api');
+      if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
+        volantis.js("/js/plugins/tags/contributors.js")
+      }
+    
+  };
+  loadIssuesJS()
+  volantis.pjax.push(()=>{
+    loadIssuesJS();
+  })
+
+</script>
+
+
+
+
+  <script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/vanilla-lazyload/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+
+<script>
+  window.FPConfig = {
+	delay: 0,
+	ignoreKeywords: ["#"],
+	maxRPS: 6,
+	hoverDelay: 0
+  };
+</script>
+<script defer src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/flying-pages/flying-pages.min.js"></script>
+
+
+
+
+
+
+
+  <script>
+  volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.css");
+  (async () => {
+    // APlayer 需要在  MetingJS 之前加载
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/aplayer/dist/APlayer.min.js")
+    await volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/meting/dist/Meting.min.js")
+  
+  })();
+
+  function SetAPlayerPlugin(){
+    let Metings = document.querySelectorAll('meting-js');
+    if (Metings.length === 0) {return;};
+    if (Metings[0].aplayer && Metings[0].aplayer.on) {
+      // improve the accessibility https://web.dev/button-name/
+      document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
+        e.setAttribute("aria-label","Aplayer Menu")
+      })
+      // message see: /layout/_plugins/message/script.ejs
+      
+        try {
+          setTimeout(() => {
+            Metings.forEach((item, index) => {
+              const aplayerItem = item.aplayer; if(!aplayerItem) return;
+              const rightAplayerCheck = 'true' === 'true'
+                && item.meta.id === '958147085';
+              if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
+              if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
+                aplayerItem.on('play', function messagePlay() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                      icon: 'fa-solid fa-play',
+                      transitionIn: 'flipInX',
+                      transitionOut: 'flipOutX'
+                    });
+                  }, 100)
+                });
+              }
+              if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
+                aplayerItem.on('pause', function messagePause() {
+                  let index = aplayerItem.list.index;
+                  let title = aplayerItem.list.audios[index].title;
+                  let artist = aplayerItem.list.audios[index].artist;
+                  setTimeout(() => {
+                    // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
+                    if(aplayerItem.paused) {
+                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
+                        icon: 'fa-solid fa-pause',
+                        transitionIn: 'flipInX',
+                        transitionOut: 'flipOutX'
+                      });
+                    }
+                  }, 100)
+                });
+              }
+            });
+          }, 500)
+        } catch (error) { console.error(error); }
+      
+    }else{
+      volantis.requestAnimationFrame(SetAPlayerPlugin)
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    SetAPlayerPlugin();
+  });
+  volantis.pjax.push(SetAPlayerPlugin);
+</script>
+
+
+
+
+      <script>
+  volantis.layoutHelper("comments",`<div id="giscus_container"></div>`)
+
+  volantis.giscus = {};
+
+  function check_giscus() {
+    if (volantis.dark.mode === "dark") {
+      volantis.giscus.Theme = 'dark';
+    } else {
+      volantis.giscus.Theme = 'light';
+    }
+
+    return document.getElementById("giscus_container");
+  }
+
+  function pjax_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+    let cfg = Object.assign({"theme":{"light":"light","dark":"dark"},"repo":"chiwuu/comments","repo-id":"R_kgDOIojJXw","category":"Announcements","category-id":"DIC_kwDOIojJX84CTH42","mapping":"pathname","reactions-enabled":"1","emit-metadata":"0","lang":"zh-CN"},pdata.commentConfig)
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://giscus.app/client.js');
+    Object.keys(cfg).forEach(k=>{
+      if (k != "theme") {
+        script.setAttribute('data-'+k, cfg[k]);
+      }
+    })
+    script.setAttribute('data-theme', volantis.giscus.Theme);
+    script.setAttribute('crossorigin', "anonymous");
+    HEAD.appendChild(script);
+  }
+
+  function dark_giscus() {
+    const HEAD = check_giscus();
+    if (!HEAD) return;
+
+    const message = {
+      setConfig: {
+        theme: volantis.giscus.Theme
+      }
+    };
+    const giscusIframe = document.querySelector('iframe.giscus-frame');
+    giscusIframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  pjax_giscus();
+  volantis.pjax.push(pjax_giscus);
+  volantis.dark.push(dark_giscus);
+</script>
+
+    
+
+
+
+
+
+<!-- optional -->
+
+  <script>
+  const SearchServiceDataPathRoot = ("/" || "/").endsWith("/") ?
+    "/" || "/" :
+    "//" || "/";
+  const SearchServiceDataPath = SearchServiceDataPathRoot + "content.json";
+
+  function loadSearchScript() {
+    // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
+    return volantis.js("/js/search/hexo.js");
+  }
+
+  function loadSearchService() {
+    loadSearchScript();
+    document.querySelectorAll(".input.u-search-input").forEach((e) => {
+      e.removeEventListener("focus", loadSearchService, false);
+    });
+
+    document.querySelectorAll(".u-search-form").forEach((e) => {
+      e.addEventListener("submit", (event) => {
+        event.preventDefault();
+      }, false);
+    });
+  }
+
+  // 打开并搜索 字符串 s
+  function OpenSearch(s) {
+    if (typeof SearchService === 'undefined')
+      loadSearchScript().then(() => {
+        SearchService.setQueryText(s);
+        SearchService.search();
+      });
+    else {
+      SearchService.setQueryText(s);
+      SearchService.search();
+    }
+  }
+
+  // 访问含有 ?s=xxx  的链接时打开搜索 // 与搜索引擎 structured data 相关: /scripts/helpers/structured-data/lib/config.js
+  if (window.location.search && /^\?s=/g.test(window.location.search)) {
+    let queryText = decodeURI(window.location.search)
+      .replace(/\ /g, "-")
+      .replace(/^\?s=/g, "");
+    OpenSearch(queryText);
+  }
+
+  // 搜索输入框获取焦点时加载搜索
+  document.querySelectorAll(".input.u-search-input").forEach((e) => {
+    e.addEventListener("focus", loadSearchService, false);
+  });
+</script>
+
+
+
+
+
+
+
+  <script>
+
+
+
+  function pjax_highlightjs_copyCode(){
+    if (!(document.querySelector(".highlight .code pre") ||
+      document.querySelector(".article pre code"))) {
+      return;
+    }
+    VolantisApp.utilCopyCode(".highlight .code pre, .article pre code")
+  }
+  volantis.requestAnimationFrame(pjax_highlightjs_copyCode)
+  volantis.pjax.push(pjax_highlightjs_copyCode)
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+  function load_swiper() {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    volantis.css("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.css");
+    volantis.js("https://unpkg.com/volantis-static@0.0.1654736714924/libs/swiper/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    volantis.swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+
+  volantis.pjax.push(() => {
+    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (typeof volantis.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+
+
+<!-- pjax 标签必须存在于所有页面 否则 pjax error -->
+<pjax>
+
+</pjax>
+
+<script>
+  function listennSidebarTOC() {
+    const navItems = document.querySelectorAll(".toc li");
+    if (!navItems.length) return;
+    let targets = []
+    const sections = [...navItems].map((element) => {
+      const link = element.querySelector(".toc-link");
+      const target = document.getElementById(
+        decodeURI(link.getAttribute("href")).replace("#", "")
+      );
+      targets.push(target)
+      // 解除 a 标签 href 的 锚点定位, a 标签 href 的 锚点定位 会随机启用?? 产生错位???
+      link.setAttribute("onclick","return false;")
+      link.setAttribute("toc-action","toc-"+decodeURI(link.getAttribute("href")).replace("#", ""))
+      link.setAttribute("href","/")
+      // 配置 点击 触发新的锚点定位
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        // 这里的 addTop 是通过错位使得 toc 自动展开.
+        volantis.scroll.to(target,{addTop: 5, observer:true})
+        // Anchor id
+        history.pushState(null, document.title, "#" + target.id);
+      });
+      return target;
+    });
+
+    function activateNavByIndex(target) {
+      if (target.classList.contains("active-current")) return;
+
+      document.querySelectorAll(".toc .active").forEach((element) => {
+        element.classList.remove("active", "active-current");
+      });
+      target.classList.add("active", "active-current");
+      let parent = target.parentNode;
+      while (!parent.matches(".toc")) {
+        if (parent.matches("li")) parent.classList.add("active");
+        parent = parent.parentNode;
+      }
+    }
+
+    // 方案一：
+    volantis.activateNavIndex=0
+    activateNavByIndex(navItems[volantis.activateNavIndex])
+    volantis.scroll.push(()=>{
+      if (targets[0].getBoundingClientRect().top >= 0) {
+        volantis.activateNavIndex = 0
+      }else if (targets[targets.length-1].getBoundingClientRect().top < 0) {
+        volantis.activateNavIndex = targets.length-1
+      } else {
+        for (let index = 0; index < targets.length; index++) {
+          const target0 = targets[index];
+          const target1 = targets[(index+1)%targets.length];
+          if (target0.getBoundingClientRect().top < 0&&target1.getBoundingClientRect().top >= 0) {
+            volantis.activateNavIndex=index
+            break;
+          }
+        }
+      }
+      activateNavByIndex(navItems[volantis.activateNavIndex])
+    })
+
+    // 方案二：
+    // IntersectionObserver 不是完美精确到像素级别 也不是低延时性的
+    // function findIndex(entries) {
+    //   let index = 0;
+    //   let entry = entries[index];
+    //   if (entry.boundingClientRect.top > 0) {
+    //     index = sections.indexOf(entry.target);
+    //     return index === 0 ? 0 : index - 1;
+    //   }
+    //   for (; index < entries.length; index++) {
+    //     if (entries[index].boundingClientRect.top <= 0) {
+    //       entry = entries[index];
+    //     } else {
+    //       return sections.indexOf(entry.target);
+    //     }
+    //   }
+    //   return sections.indexOf(entry.target);
+    // }
+    // function createIntersectionObserver(marginTop) {
+    //   marginTop = Math.floor(marginTop + 10000);
+    //   let intersectionObserver = new IntersectionObserver(
+    //     (entries, observe) => {
+    //       let scrollHeight = document.documentElement.scrollHeight;
+    //       if (scrollHeight > marginTop) {
+    //         observe.disconnect();
+    //         createIntersectionObserver(scrollHeight);
+    //         return;
+    //       }
+    //       let index = findIndex(entries);
+    //       activateNavByIndex(navItems[index]);
+    //     }, {
+    //       rootMargin: marginTop + "px 0px -100% 0px",
+    //       threshold: 0,
+    //     }
+    //   );
+    //   sections.forEach((element) => {
+    //     element && intersectionObserver.observe(element);
+    //   });
+    // }
+    // createIntersectionObserver(document.documentElement.scrollHeight);
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+  document.addEventListener("pjax:success", ()=>{
+    volantis.requestAnimationFrame(listennSidebarTOC)
+  });
+</script>
+
+
+
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+      // 页面加载完毕 样式加载失败，或是当前网速慢，或是开启了省流模式
+      const { saveData, effectiveType } = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {}
+      if (getComputedStyle(document.querySelector("#safearea"), null)["display"] == "none" || saveData || /2g/.test(effectiveType)) {
+        document.querySelectorAll(".reveal").forEach(function (e) {
+          e.style["opacity"] = "1";
+        });
+        document.querySelector("#safearea").style["display"] = "block";
+      }
+    }
+  }
+</script>
+
+
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":null},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"龍"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/01/01/Java基础语法/","name":"Java基础语法"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"龍","url":"http://example.com/","keywords":null,"description":null,"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":null},"publisher":{"@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Java基础语法","description":null,"inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/01/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"},"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"龍","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/01/01/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/","wordCount":0,"datePublished":"2021-01-01T04:16:12.000Z","dateModified":"2023-02-14T16:27:21.467Z","articleSection":"Java","keywords":"Java,后端","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+
+
+
+      
+        <!--
+  pjax重载区域接口：
+  1.  <pjax></pjax> 标签 pjax 标签必须存在于所有页面 否则 pjax error
+  2.  script[data-pjax]
+  3.  .pjax-reload script
+  4.  .pjax
+-->
+
+
+
+<script src="https://unpkg.com/volantis-static@0.0.1654736714924/libs/pjax/pjax.min.js"></script>
+
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox]):not([onclick="return false;"]):not([onclick="return!1"]):not([target="_blank"]):not([target="view_window"]):not([href$=".xml"])',
+        selectors: [
+          "head title",
+          "head meta[name=keywords]",
+          "head meta[name=description]",
+          
+          "#l_main",
+          "#pjax-header-nav-list",
+          ".pjax",
+          "pjax", // <pjax></pjax> 标签
+          "script[data-pjax], .pjax-reload script" // script标签添加data-pjax 或 script标签外层添加.pjax-reload 的script代码段重载
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000,
+        
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      //window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      // 使用 volantis.pjax.send 方法传入pjax:send回调函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.send.start();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 使用 volantis.pjax.push 方法传入重载函数 参见layout/_partial/scripts/global.ejs
+      volantis.pjax.method.complete.start();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      if(volantis.debug) {
+        console.error(e);
+        console.log('pjax error: \n' + JSON.stringify(e));
+      }else{
+        // 使用 volantis.pjax.error 方法传入pjax:error回调函数 参见layout/_partial/scripts/global.ejs
+        volantis.pjax.method.error.start();
+        window.location.href = e.triggerElement.href;
+      }
+    });
+</script>
+
+      
+    </div>
+    <!-- import body_end begin-->
+    <!-- import body_end end-->
+    <!-- Custom Files bodyEnd begin-->
+    
+    <!-- Custom Files bodyEnd end-->
+  </body>
+</html>

@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="http://example.com/categories/日常/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,12 +31,12 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>龍</title>
-  <meta name="keywords" content="">
+  <title>分类：日常 - 龍</title>
+  <meta name="keywords" content="null">
   <meta desc name="description" content="龍 - 龍 - 龍">
   <meta property="og:type" content="website">
 <meta property="og:title" content="龍">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/categories/%E6%97%A5%E5%B8%B8/index.html">
 <meta property="og:site_name" content="龍">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -2051,7 +2051,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2286,7 +2286,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper  search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://i.328888.xyz/2022/12/17/4cF8k.jpeg"></div>
 
@@ -2345,7 +2345,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2354,468 +2354,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
+
 <div id="l_main" class=''>
   
+    
+      
   <section class="post-list">
     
       
         
           
         
-          
-        
-          
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
       
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/06/小程序海报生成/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/06/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B5%B7%E6%8A%A5%E7%94%9F%E6%88%90/"  itemprop="url">
-        小程序海报生成
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        小程序的海报生成是使用canvas实现的，但是因为我对canvas并不熟悉，所以记录一下实现过程。
-海报生成效果展示：
-
-
-
-
-
-
-小程序海报生成实现，一般分为三个部分：背景绘制、图片绘制、文字绘制。
-
-1、图片的绘制
-图片绘制一般又分两种情况，一种是普通的图片绘制，另一种是图片经过剪裁后绘制，例如将正方形的用户头像裁剪称为圆形图案显示。
-普通的图片绘制：
-普通图片绘制需要注意的点是调用ca...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-06T12:16:12+08:00">2022-09-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" itemprop="url"><span itemprop="name">小程序</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/06/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B5%B7%E6%8A%A5%E7%94%9F%E6%88%90/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/关于Vue组件封装/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/06/%E5%85%B3%E4%BA%8EVue%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/"  itemprop="url">
-        Vue组件封装笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        关于Vue组件封装
-以下都是Vue2写法
-Vue的组件封装都挺相似的，可以分为三个部分：
-
-1、props：父向子传输数据
-props是子组件用来接受父组件传过来的数据的
-父组件通过子组件标签，:mes&#x3D;”mes”来向子组件发送数据
-另：子组件接收父组件的数据，一般是不直接修改传过来的数据。子组件想要修改数据，可以向父组件通信this.$emit(“event”,param)，让父...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-06T12:16:12+08:00">2022-06-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/06/%E5%85%B3%E4%BA%8EVue%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/前端二进制相关/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/06/%E5%89%8D%E7%AB%AF%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9B%B8%E5%85%B3/"  itemprop="url">
-        前端二进制相关
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前端二进制相关
-前端二进制相关的有Blob、File、Base64、FileReader、ArrayBuffer等
-
-ArrayBuffer
-123ArrayBuffer对象代表储存二进制数据的一段内存，它不能直接读写，只能通过视图进行操作。// 创建一个长度为 16 的 buffer 它会分配一个 16 字节（byte）的连续内存空间，并用 0 进行预填充。const buffer1 = ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-06T12:16:12+08:00">2022-05-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/06/%E5%89%8D%E7%AB%AF%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9B%B8%E5%85%B3/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/06/webpack/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/06/webpack/"  itemprop="url">
-        webpack相关
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        webpack学习笔记
-基本属性entry（入口）
-指示 Webpack 从哪个文件开始打包
-output（输出）
-指示 Webpack 打包完的文件输出到哪里去，如何命名等
-loader（加载器）
-webpack 本身只能处理 js、json 等资源，其他资源需要借助 loader，Webpack 才能解析
-plugins（插件）
-扩展 Webpack 的功能
-mode（模式）
-主要由两种...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-06T12:16:12+08:00">2022-04-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/06/webpack/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/06/vue结合XLSX简单实现excel表格的导入导出/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/03/06/vue%E7%BB%93%E5%90%88XLSX%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0excel%E8%A1%A8%E6%A0%BC%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/"  itemprop="url">
-        vue结合XLSX简单实现excel表格的导入导出
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        vue结合XLSX简单实现excel表格的导入导出
-关于表格的导入导出实现，粗略地记录一下，备忘录了属于是。
-表格的导入导出可以做的复杂也可以做的简单，这需要看需求。
-前端想简单的话，可以让后端来干，前端负责调用后端提供的接口。
-导入  弄个input标签 file类型接收文件，然后将文件上传给后端即可。
-导出 
-123456let ele = document.createElement(...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-03-06T12:16:12+08:00">2022-03-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/06/vue%E7%BB%93%E5%90%88XLSX%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0excel%E8%A1%A8%E6%A0%BC%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/02/关于Vue2的个人笔记/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/02/%E5%85%B3%E4%BA%8EVue2%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"  itemprop="url">
-        关于Vue2的个人笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1.vue指令v-on：绑定事件，语法糖@
-v-for：循环遍历数据，数据类型可以是 array|object|string|number ,特定语法，v-for&#x3D;“item in 数据源名” 或者
- v-for&#x3D;“（item，index）in 数据源名”     item可以自己起名，index是索引。v-for一般配合key来用，key是为了能够更好的利用性能，高效地...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-02T12:16:12+08:00">2022-02-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Vue2/">Vue2</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Vue2/" itemprop="url"><span itemprop="name">Vue2</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/02/%E5%85%B3%E4%BA%8EVue2%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
       
         
           <div class='post-wrapper'>
@@ -2881,228 +2433,15 @@ v-for：循环遍历数据，数据类型可以是 array|object|string|number ,�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/06/git常见操作/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/09/06/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"  itemprop="url">
-        git的常见操作
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        git常见操作
-12345678910111213141516171819202122232425git init	选择路径，在当前路径初始化，会创建一个隐藏的文件.git，把该目录变成git可以管理的仓库。git add .  点代表所有，add代表添加到暂存区。该语句为将该路径下的所有文件添加到暂存区中。git add 文件名    文件名需要全名，即后缀名也带上，表示添该文件到暂存区中...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-09-06T12:16:12+08:00">2021-09-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/git/">git</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/git/" itemprop="url"><span itemprop="name">git</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/09/06/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/06/dom相关/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/06/06/dom%E7%9B%B8%E5%85%B3/"  itemprop="url">
-        dom相关
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        dom相关dom即document object model.
-1.获取元素的几种方法
-doucment.getElementById();
-document.getElementsByTagName();
-document.getElementsByName();
-document.getElementsByClassName();
-document.querySelector() ;
-d...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-06-06T12:16:12+08:00">2021-06-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/06/06/dom%E7%9B%B8%E5%85%B3/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/06/ES6相关/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/05/06/ES6%E7%9B%B8%E5%85%B3/"  itemprop="url">
-        ES6相关
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        ES6
-ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
-因为当前版本的ES6是在2015年发布的，所以又称ECMAScript 2015(简称ES2015）。虽然浏览器在不断更新，但并不是所有用户的电脑浏览器都支持ES6，所以在使用的过程中建议还是转成es5，保证代码的可执行性。至于转换的方式大家可以用Babel或者Traceur。
-1.let和const...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-05-06T12:16:12+08:00">2021-05-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/JavaScript/" itemprop="url"><span itemprop="name">JavaScript</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/05/06/ES6%E7%9B%B8%E5%85%B3/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
     
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
   
 
 
+    
+  
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3289,7 +2628,6 @@ ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
 </aside>
 
 
-
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
@@ -3305,15 +2643,15 @@ ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -3898,7 +3236,7 @@ ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":null},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"龍"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"龍","url":"http://example.com/","keywords":null,"description":null,"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":null},"publisher":{"@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":null,"inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"龍","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":null},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"龍"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/日常/","name":"日常"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"龍","url":"http://example.com/","keywords":null,"description":null,"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":null},"publisher":{"@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":null,"inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"龍","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

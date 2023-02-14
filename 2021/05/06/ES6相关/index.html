@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  
+  <link rel="canonical" href="http://example.com/2021/05/06/es6相关/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,16 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>龍</title>
-  <meta name="keywords" content="">
+  <title>ES6相关 - 龍</title>
+  <meta name="keywords" content="js,null">
   <meta desc name="description" content="龍 - 龍 - 龍">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="龍">
-<meta property="og:url" content="http://example.com/index.html">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6相关">
+<meta property="og:url" content="http://example.com/2021/05/06/ES6%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="龍">
+<meta property="og:description" content="ES6 ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。 因为当前版本的ES6是在2015年发布的，所以又称ECMAScript 2015(简称ES2015）。虽然浏览器在不断更新，但并不是所有用户的电脑浏览器都支持ES6，所以在使用的过程中建议还是转成es5，保证代码的可执行性。至于转换的方式大家可以用Babel或者Traceur。 1.let和constES6">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-05-06T04:16:12.000Z">
+<meta property="article:modified_time" content="2023-02-14T14:50:24.388Z">
 <meta property="article:author" content="龍">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2051,7 +2056,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2286,7 +2291,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://i.328888.xyz/2022/12/17/4cF8k.jpeg"></div>
 
@@ -2345,7 +2350,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2355,669 +2360,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/06/小程序海报生成/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/09/06/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B5%B7%E6%8A%A5%E7%94%9F%E6%88%90/"  itemprop="url">
-        小程序海报生成
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        小程序的海报生成是使用canvas实现的，但是因为我对canvas并不熟悉，所以记录一下实现过程。
-海报生成效果展示：
-
-
-
-
-
-
-小程序海报生成实现，一般分为三个部分：背景绘制、图片绘制、文字绘制。
-
-1、图片的绘制
-图片绘制一般又分两种情况，一种是普通的图片绘制，另一种是图片经过剪裁后绘制，例如将正方形的用户头像裁剪称为圆形图案显示。
-普通的图片绘制：
-普通图片绘制需要注意的点是调用ca...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-09-06T12:16:12+08:00">2022-09-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" itemprop="url"><span itemprop="name">小程序</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/09/06/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B5%B7%E6%8A%A5%E7%94%9F%E6%88%90/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/06/关于Vue组件封装/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/06/06/%E5%85%B3%E4%BA%8EVue%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/"  itemprop="url">
-        Vue组件封装笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        关于Vue组件封装
-以下都是Vue2写法
-Vue的组件封装都挺相似的，可以分为三个部分：
-
-1、props：父向子传输数据
-props是子组件用来接受父组件传过来的数据的
-父组件通过子组件标签，:mes&#x3D;”mes”来向子组件发送数据
-另：子组件接收父组件的数据，一般是不直接修改传过来的数据。子组件想要修改数据，可以向父组件通信this.$emit(“event”,param)，让父...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-06-06T12:16:12+08:00">2022-06-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/06/06/%E5%85%B3%E4%BA%8EVue%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/06/前端二进制相关/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/05/06/%E5%89%8D%E7%AB%AF%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9B%B8%E5%85%B3/"  itemprop="url">
-        前端二进制相关
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        前端二进制相关
-前端二进制相关的有Blob、File、Base64、FileReader、ArrayBuffer等
-
-ArrayBuffer
-123ArrayBuffer对象代表储存二进制数据的一段内存，它不能直接读写，只能通过视图进行操作。// 创建一个长度为 16 的 buffer 它会分配一个 16 字节（byte）的连续内存空间，并用 0 进行预填充。const buffer1 = ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-05-06T12:16:12+08:00">2022-05-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/05/06/%E5%89%8D%E7%AB%AF%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%9B%B8%E5%85%B3/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/06/webpack/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/04/06/webpack/"  itemprop="url">
-        webpack相关
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        webpack学习笔记
-基本属性entry（入口）
-指示 Webpack 从哪个文件开始打包
-output（输出）
-指示 Webpack 打包完的文件输出到哪里去，如何命名等
-loader（加载器）
-webpack 本身只能处理 js、json 等资源，其他资源需要借助 loader，Webpack 才能解析
-plugins（插件）
-扩展 Webpack 的功能
-mode（模式）
-主要由两种...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-04-06T12:16:12+08:00">2022-04-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/04/06/webpack/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/06/vue结合XLSX简单实现excel表格的导入导出/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/03/06/vue%E7%BB%93%E5%90%88XLSX%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0excel%E8%A1%A8%E6%A0%BC%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/"  itemprop="url">
-        vue结合XLSX简单实现excel表格的导入导出
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        vue结合XLSX简单实现excel表格的导入导出
-关于表格的导入导出实现，粗略地记录一下，备忘录了属于是。
-表格的导入导出可以做的复杂也可以做的简单，这需要看需求。
-前端想简单的话，可以让后端来干，前端负责调用后端提供的接口。
-导入  弄个input标签 file类型接收文件，然后将文件上传给后端即可。
-导出 
-123456let ele = document.createElement(...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-03-06T12:16:12+08:00">2022-03-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/03/06/vue%E7%BB%93%E5%90%88XLSX%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0excel%E8%A1%A8%E6%A0%BC%E7%9A%84%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/02/关于Vue2的个人笔记/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/02/%E5%85%B3%E4%BA%8EVue2%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"  itemprop="url">
-        关于Vue2的个人笔记
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        1.vue指令v-on：绑定事件，语法糖@
-v-for：循环遍历数据，数据类型可以是 array|object|string|number ,特定语法，v-for&#x3D;“item in 数据源名” 或者
- v-for&#x3D;“（item，index）in 数据源名”     item可以自己起名，index是索引。v-for一般配合key来用，key是为了能够更好的利用性能，高效地...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-02T12:16:12+08:00">2022-02-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Vue2/">Vue2</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Vue2/" itemprop="url"><span itemprop="name">Vue2</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/02/%E5%85%B3%E4%BA%8EVue2%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/02/关于我脱发那件事/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/02/%E5%85%B3%E4%BA%8E%E6%88%91%E8%84%B1%E5%8F%91%E9%82%A3%E4%BB%B6%E4%BA%8B/"  itemprop="url">
-        关于我脱发那件事
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        我才没有脱发谢谢
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-02T12:16:12+08:00">2022-02-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%97%A5%E5%B8%B8/" itemprop="url"><span itemprop="name">日常</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/02/%E5%85%B3%E4%BA%8E%E6%88%91%E8%84%B1%E5%8F%91%E9%82%A3%E4%BB%B6%E4%BA%8B/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/06/git常见操作/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/09/06/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/"  itemprop="url">
-        git的常见操作
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        git常见操作
-12345678910111213141516171819202122232425git init	选择路径，在当前路径初始化，会创建一个隐藏的文件.git，把该目录变成git可以管理的仓库。git add .  点代表所有，add代表添加到暂存区。该语句为将该路径下的所有文件添加到暂存区中。git add 文件名    文件名需要全名，即后缀名也带上，表示添该文件到暂存区中...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-09-06T12:16:12+08:00">2021-09-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/git/">git</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/git/" itemprop="url"><span itemprop="name">git</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/09/06/git%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/06/dom相关/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="龍">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="龍">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/06/06/dom%E7%9B%B8%E5%85%B3/"  itemprop="url">
-        dom相关
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        dom相关dom即document object model.
-1.获取元素的几种方法
-doucment.getElementById();
-document.getElementsByTagName();
-document.getElementsByName();
-document.getElementsByClassName();
-document.querySelector() ;
-d...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-06-06T12:16:12+08:00">2021-06-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/06/06/dom%E7%9B%B8%E5%85%B3/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/06/ES6相关/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="龍">
@@ -3027,80 +2370,306 @@ d...
     <meta itemprop="description" content="">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/05/06/ES6%E7%9B%B8%E5%85%B3/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         ES6相关
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">请设置文章作者</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
     
-      
-        ES6
-ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
-因为当前版本的ES6是在2015年发布的，所以又称ECMAScript 2015(简称ES2015）。虽然浏览器在不断更新，但并不是所有用户的电脑浏览器都支持ES6，所以在使用的过程中建议还是转成es5，保证代码的可执行性。至于转换的方式大家可以用Babel或者Traceur。
-1.let和const...
-      
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/JavaScript/" itemprop="url"><span itemprop="name">JavaScript</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-05-06T12:16:12+08:00">2021-05-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/JavaScript/" itemprop="url"><span itemprop="name">JavaScript</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-05-06T12:16:12+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年5月6日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>ES6</p>
+<p>ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。</p>
+<p>因为当前版本的ES6是在2015年发布的，所以又称ECMAScript 2015(简称ES2015）。虽然浏览器在不断更新，但并不是所有用户的电脑浏览器都支持ES6，所以在使用的过程中建议还是转成es5，保证代码的可执行性。至于转换的方式大家可以用Babel或者Traceur。</p>
+<h2 id="1-let和const"><a href="#1-let和const" class="headerlink" title="1.let和const"></a>1.let和const</h2><p>ES6以前没有块级作用域，只有全局作用域和函数作用域。而let的出现就是为了打破局面，let是块级作用域。const是代表常量，必须在定义的时候初始化，不可改变。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1  &#123;</span><br><span class="line">2      var a=5;</span><br><span class="line">3      let b=10;</span><br><span class="line">4  &#125;</span><br><span class="line">5  console.log(a);//5</span><br><span class="line">6  console.log(b);//error</span><br></pre></td></tr></table></figure>
+
+<p>也就是说，var声明的变量由于不存在块级作用域所以可以在全局环境中调用，而let声明的变量由于存在块级作用域所以不能在全局环境中调用。</p>
+<h2 id="2-字符串拼接"><a href="#2-字符串拼接" class="headerlink" title="2.字符串拼接"></a>2.字符串拼接</h2><p>​	es6使用 <code> </code> 包裹字符串，即使断开，也可以用这个符号包裹起来合并成一个字符串。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> 1 //传统字符串拼接</span><br><span class="line"> 2 var s1 = &#x27;生物膜系统组装又拆分，变幻莫测；&#x27;;</span><br><span class="line"> 3 var s2 = &#x27;你的好多细胞在分裂，&#x27;;</span><br><span class="line"> 4 var str = &#x27;孩子们：请听我说！&#x27;+s2+&#x27;有丝，减数，哪管白天和黑夜。&#x27;+</span><br><span class="line"> 5 &#x27;染色体，细胞核时隐时现，&#x27;+s1+&#x27;核糖体在mRNA上穿梭忙碌，&#x27;+&#x27;几千种酶各司其职，将活化能狠狠打折。&#x27;;</span><br><span class="line"> 6 console.log(str);    </span><br><span class="line"> 7             </span><br><span class="line"> 8 // 字符模板的写法</span><br><span class="line"> 9 var s1 = &#x27;染色体，细胞核时隐时现，&#x27;;</span><br><span class="line">10 var s2 = &#x27;你的好多细胞在分裂，&#x27;;</span><br><span class="line">11 var str = `孩子们：请听我说！$&#123;s2&#125;有丝，减数，哪管白天和黑夜。$&#123;s1&#125;生物膜系统组装又拆分，变幻莫测；核糖体在mRNA上穿梭忙碌，几千种酶各司其职，将活化能狠狠打折。`;</span><br><span class="line">12 console.log(str);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-解构赋值"><a href="#3-解构赋值" class="headerlink" title="3.解构赋值"></a>3.解构赋值</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">1 // 以前我们给变量赋值，只能直接指定值</span><br><span class="line"> 2 var a = 1;</span><br><span class="line"> 3 var b = 2;</span><br><span class="line"> 4 var c = 3;</span><br><span class="line"> 5 console.log(a,b,c); // 1 2 3</span><br><span class="line"> 6             </span><br><span class="line"> 7 // 现在用解构赋值的写法就变得简单了，只要模式匹配上了就行了，如下</span><br><span class="line"> 8 // 注意数组是有顺序的</span><br><span class="line"> 9 var [a,b,c] = [11,22,33];</span><br><span class="line">10 console.log(a,b,c); // 11 22 33</span><br><span class="line">11 </span><br><span class="line">12 var [b,a,c] = [11,22,33];</span><br><span class="line">13 console.log(a,b,c); // 22 11 33</span><br><span class="line">14 </span><br><span class="line">15 // 当然解构赋值还有嵌套比较复杂的写法，如下</span><br><span class="line">16 let [foo,[[bar],[baz]]] = [111,[[222],[333]]];</span><br><span class="line">17 console.log(foo,bar,baz); // 111 222 333</span><br><span class="line">18 </span><br><span class="line">19 let [head,...foot] = [1,2,3,4];</span><br><span class="line">20 console.log(head,foot); // 1 [2,3,4]</span><br><span class="line">21 </span><br><span class="line">22 // 如果解构不成功，变量的值就等于undefined，如下</span><br><span class="line">23 var [bar3,foo3] = [1000];</span><br><span class="line">24 console.log(bar3,foo3); // 1000 undefined</span><br><span class="line">25 </span><br><span class="line">26 // 另一种情况是不完全解构，即等号左边的模式，只匹配一部分的等号右边的数组。这种情况下，解构依然可以成功</span><br><span class="line">27 let [x,y] = [10000,20000,30000];</span><br><span class="line">28 console.log(x,y); // 10000 20000</span><br><span class="line">29 </span><br><span class="line">30 // 默认值可以引用解构赋值的其他变量，但该变量必须已经声明</span><br><span class="line">31 let [a=1,b=a] = [2,3];</span><br><span class="line">32 console.log(a,b); // 2 3</span><br><span class="line">33 </span><br><span class="line">34 // 对象的解构也可以指定默认值</span><br><span class="line">35 var &#123;x,y=5&#125; = &#123;x:1&#125;;</span><br><span class="line">36 console.log(x,y); // 1 5</span><br><span class="line">37 </span><br><span class="line">38 //对象的解构赋值解构不仅可以用于数组，还可以用于对象(json)</span><br><span class="line">39 //对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；</span><br><span class="line">40 //而对象的属性没有次序，变量必须与属性同名，才能取到正确的值</span><br><span class="line">41 var &#123;a,b&#125; = &#123;a:&#x27;apple&#x27;,b:&#x27;banana&#x27;&#125;;</span><br><span class="line">42 console.log(a,b); // apple banana</span><br><span class="line">43 var &#123;b,a&#125; = &#123;a:&#x27;apple&#x27;,b:&#x27;banana&#x27;&#125;;</span><br><span class="line">44 console.log(a,b); // apple banana</span><br><span class="line">45 </span><br><span class="line">46 // 如果变量名与属性名不一致，必须写成下面这样</span><br><span class="line">47 let obj = &#123;first:&#x27;hello&#x27;,last:&#x27;world&#x27;&#125;;</span><br><span class="line">48 // first ---&gt; f，那么此时f就是first，而不是undefined了,有点类似别名的概念</span><br><span class="line">49 let &#123;first:f,last&#125; = obj;</span><br><span class="line">50 console.log(f,last); // hello world</span><br><span class="line">51 </span><br><span class="line">52 //1.也就是说，对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。 真正被赋值的是后者，而不是前者</span><br><span class="line">53 //2.v是匹配的模式，n才是变量。真正被赋值的是变量n，而不是模式v。  </span><br><span class="line">54 //注意，采用这种写法时，变量的声明和赋值是一体的</span><br><span class="line">55 // v ---&gt; n，那么此时n就是vue，而不是undefined了</span><br><span class="line">56 var &#123;v:n&#125; = &#123;v:&#x27;vue&#x27;,r:&#x27;react&#x27;&#125;;</span><br><span class="line">57 console.log(n); // vue</span><br><span class="line">58 console.log(v); // Uncaught ReferenceError: v is not defined</span><br><span class="line">59 console.log(r); // Uncaught ReferenceError: r is not defined</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-复制数组"><a href="#4-复制数组" class="headerlink" title="4.复制数组"></a>4.复制数组</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"> // 数组的浅拷贝，引用之间的拷贝，没有实现数组的真正复制</span><br><span class="line"> 2 var arr1 = [1, 2, 3];</span><br><span class="line"> 3 var arr2 = arr1;</span><br><span class="line"> 4 arr2.push(4);</span><br><span class="line"> 5 console.log(arr1, arr2); //[1, 2, 3, 4] [1, 2, 3, 4]</span><br><span class="line"> 6 </span><br><span class="line"> 7 // 复制数组深拷贝，传统做法</span><br><span class="line"> 8 var arr1 = [1,2,3];</span><br><span class="line"> 9 var arr2 = [];</span><br><span class="line">10 //通过for循环遍历之后将arr1数组的每一项赋值给arr2数组的每一项， 就实现了数组的深拷贝，这时候我再去操作arr2的数组的时候，arr1就不会受影响了</span><br><span class="line">11 for(var i=0;i&lt;arr1.length;i++)&#123;</span><br><span class="line">12     arr2[i] = arr1[i];</span><br><span class="line">13 &#125;</span><br><span class="line">14 // 数组尾部添加</span><br><span class="line">15 arr2.push(4);</span><br><span class="line">16 console.log(arr1,arr2);</span><br><span class="line">17 </span><br><span class="line">18 // ES6实现的数组的深拷贝方法1</span><br><span class="line">19 var arr1 = [1,2,3];</span><br><span class="line">20 var arr2 = Array.from(arr1);</span><br><span class="line">21 // 数组尾部添加</span><br><span class="line">22 arr2.push(100);</span><br><span class="line">23 console.log(arr1,arr2); // [1, 2, 3] [1, 2, 3, 100]</span><br><span class="line">24 </span><br><span class="line">25 // ES6实现的数组的深拷贝方法2</span><br><span class="line">26 var arr1 = [1,2,3];</span><br><span class="line">27 // 超引用拷贝数组</span><br><span class="line">28 var arr2 = [...arr1];</span><br><span class="line">29 // 数组尾部添加</span><br><span class="line">30 arr2.push(1000);</span><br><span class="line">31 console.log(arr1,arr2); // [1, 2, 3] [1, 2, 3, 1000]</span><br><span class="line">32 </span><br><span class="line">33 function show(...args)&#123;</span><br><span class="line">34 // 此时这个形式参数就是一个数组，我们可以直接push东西进来，如下</span><br><span class="line">35 args.push(5);</span><br><span class="line">36 console.log(args);</span><br><span class="line">37 &#125;</span><br><span class="line">38 // 调用</span><br><span class="line">39 show(1,2,3,4); // [1, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-增加了map对象。倾向于后台"><a href="#5-增加了map对象。倾向于后台" class="headerlink" title="5.增加了map对象。倾向于后台"></a>5.增加了map对象。倾向于后台</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">1 var map = new Map();</span><br><span class="line"> 2 // 设置</span><br><span class="line"> 3 // map.set(name,value);</span><br><span class="line"> 4 map.set(&#x27;a&#x27;,&#x27;apple&#x27;);</span><br><span class="line"> 5 map.set(&#x27;b&#x27;,&#x27;banana&#x27;);</span><br><span class="line"> 6 // 获取</span><br><span class="line"> 7 // map.get(name);</span><br><span class="line"> 8 console.log(map.get(&#x27;a&#x27;) + &#x27; &#x27; + map.get(&#x27;b&#x27;));</span><br><span class="line"> 9 // 删除之前map对象</span><br><span class="line">10 console.log(map);</span><br><span class="line">11 // 删除</span><br><span class="line">12 // map.delete(name);</span><br><span class="line">13 map.delete(&#x27;a&#x27;);</span><br><span class="line">14 // 删除之后map对象</span><br><span class="line">15 console.log(map);</span><br><span class="line">16 </span><br><span class="line">17 // 注意for..in是不能循环map对象的，不报错也无任何反应，所以下一代码无任何输出，稍微注意下</span><br><span class="line">18 for(var name in map)&#123; </span><br><span class="line">19     console.log(name);</span><br><span class="line">20 &#125;</span><br><span class="line">21 </span><br><span class="line">22 // 实体 map对象的循环输出</span><br><span class="line">23 for(var name of map)&#123;</span><br><span class="line">24 //循环出来的结果就是:a,apple b,banana 循环key,value</span><br><span class="line">25 console.log(name);</span><br><span class="line">26 &#125;</span><br><span class="line">27 </span><br><span class="line">28 //循环出来的结果就是: a,apple b,banana 循环key,value</span><br><span class="line">29 for(var [key,value] of map.entries())&#123;</span><br><span class="line">30     console.log(key,value);</span><br><span class="line">31 &#125;</span><br><span class="line">32 </span><br><span class="line">33 //只循环key</span><br><span class="line">34 for(var key of map.keys())&#123;</span><br><span class="line">35     console.log(key);</span><br><span class="line">36 &#125;</span><br><span class="line">37 </span><br><span class="line">38 //只循环value</span><br><span class="line">39 for(var val of map.values())&#123;</span><br><span class="line">40     console.log(val);</span><br><span class="line">41 &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-for-of循环"><a href="#6-for-of循环" class="headerlink" title="6.for-of循环"></a>6.for-of循环</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">1 //for of一个arr对象</span><br><span class="line"> 2 var arr = [&#x27;红楼梦&#x27;,&#x27;西游记&#x27;,&#x27;三国演义&#x27;,&#x27;水浒传&#x27;,&#x27;火影&#x27;];</span><br><span class="line"> 3 //只循环key  0 1 2 3 4 输出key值，也就是下标索引</span><br><span class="line"> 4 for(var key of arr.keys())&#123;</span><br><span class="line"> 5 console.log(key);</span><br><span class="line"> 6 &#125;</span><br><span class="line"> 7 //只循环value，注意数组是没有.values() 直接 var value of arr ,输出 红楼梦，西游记，三国演义，水浒传，火影</span><br><span class="line"> 8 for(var value of arr)&#123;</span><br><span class="line"> 9 console.log(value);</span><br><span class="line">10 &#125;</span><br><span class="line">11 //循环key,value</span><br><span class="line">12 for(var [key,value] of arr.entries())&#123;</span><br><span class="line">13 console.log(key,value);</span><br><span class="line">14 &#125;</span><br><span class="line">15 </span><br><span class="line">16 //for in循环与for of循环的区别</span><br><span class="line">17 var arr = [&#x27;apple&#x27;,&#x27;banana&#x27;,&#x27;orange&#x27;,&#x27;pear&#x27;];</span><br><span class="line">18 for(var i in arr)&#123;</span><br><span class="line">19 // i打印出来的就是arr数组对应的索引</span><br><span class="line">20 // 0 1 2 3</span><br><span class="line">21 console.log(i);</span><br><span class="line">22 &#125;</span><br><span class="line">23 for(var i of arr)&#123;</span><br><span class="line">24 // i值打印出来的就是我们想要的数组具体的值</span><br><span class="line">25 // apple banana orange pear</span><br><span class="line">26 console.log(i);</span><br><span class="line">27 &#125;</span><br><span class="line">28 </span><br><span class="line">29 //for of不能循环json</span><br><span class="line">30 var json = &#123;&#x27;a&#x27;:&#x27;apple&#x27;,&#x27;b&#x27;:&#x27;banana&#x27;,&#x27;c&#x27;:&#x27;orange&#x27;,&#x27;d&#x27;:&#x27;pear&#x27;&#125;;</span><br><span class="line">31 for(var name in json)&#123;</span><br><span class="line">32 // a b c d</span><br><span class="line">33 console.log(name);</span><br><span class="line">34 // apple</span><br><span class="line">35 console.log(json.a);</span><br><span class="line">36 // pear</span><br><span class="line">37 console.log(json[&#x27;d&#x27;]);</span><br><span class="line">38 &#125;</span><br><span class="line">39 // 注意for..of可以循环arr，但是不可以循环json,会报错，特别注意下</span><br><span class="line">40 for(var name of json)&#123;</span><br><span class="line">41 Uncaught TypeError: undefined is not a function</span><br><span class="line">42 console.log(json);</span><br><span class="line">43 &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-箭头函数"><a href="#7-箭头函数" class="headerlink" title="7.箭头函数"></a>7.箭头函数</h2><p><strong>箭头函数表达式</strong>的语法比函数表达式更短，并且不绑定自己的this，arguments，super或 new.target。这些函数表达式最适合用于非方法函数，并且它们不能用作构造函数，不能使用new。</p>
+<p>箭头函数的写法  function(){ } 变成 ()&#x3D;&gt;{ }</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 var a = ()=&gt;&#123;</span><br><span class="line">2   return 1;</span><br><span class="line">3 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>等价于</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 function a()&#123;</span><br><span class="line">2   return 1;</span><br><span class="line">3 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果函数体只有一条语句，可以这样写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 var fun = ()=&gt;Math.random()*10</span><br><span class="line">2 console.log(fun());</span><br></pre></td></tr></table></figure>
+
+<p>这样子调用这个箭头函数就会直接返回这条语句的值</p>
+<p>头函数不绑定arguments，取而代之用rest参数…解决</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> 1 function A(a)&#123;</span><br><span class="line"> 2   console.log(arguments); //[object Arguments] [1, 2, 3]</span><br><span class="line"> 3 &#125;</span><br><span class="line"> 4 </span><br><span class="line"> 5 var B = (b)=&gt;&#123;</span><br><span class="line"> 6   console.log(arguments); //错误：ReferenceError: arguments is not defined</span><br><span class="line"> 7 &#125;</span><br><span class="line"> 8 </span><br><span class="line"> 9 var C = (...c)=&gt;&#123; //...c即为rest参数</span><br><span class="line">10   console.log(c); //[3, 1, 2]</span><br><span class="line">11 &#125;</span><br><span class="line">12 A(1,2,3);</span><br><span class="line">13 B(2,1,3);</span><br><span class="line">14 C(3,1,2);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>箭头函数会捕获其所在上下文的 this 值，作为自己的 this 值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> 1 var obj = &#123;</span><br><span class="line"> 2   a: 10,</span><br><span class="line"> 3   b: function()&#123;</span><br><span class="line"> 4     console.log(this.a); //输出10</span><br><span class="line"> 5   &#125;,</span><br><span class="line"> 6   c: function() &#123;</span><br><span class="line"> 7      return ()=&gt;&#123;</span><br><span class="line"> 8            console.log(this.a); //输出10，捕获了上面obj的this作为自己的this</span><br><span class="line"> 9      &#125;</span><br><span class="line">10   &#125;</span><br><span class="line">11 &#125;</span><br><span class="line">12 obj.b(); </span><br><span class="line">13 obj.c()();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>所谓箭头函数的 this 捕获的是所在的上下文，比如下面这个例子：<code>b</code>是一个箭头函数，然后它的 <code>this</code>是指向<code>window</code>，这是为什么呢，因为箭头函数捕获的是<code>obj&#123;&#125;</code>这个对象的环境，然后这个环境的<code>this</code>指向的是<code>window</code>，就相当于上一条的例子：在<code>c</code>方法里面<code>return</code>的那个箭头函数捕获的是<code>c:function()&#123;&#125;</code>这个环境的<code>this</code>，而这个环境的<code>this</code>是<code>obj</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> 1 var obj = &#123;</span><br><span class="line"> 2   a: 10,</span><br><span class="line"> 3   b: () =&gt; &#123;</span><br><span class="line"> 4     console.log(this.a); //undefined</span><br><span class="line"> 5     console.log(this); //window</span><br><span class="line"> 6   &#125;,</span><br><span class="line"> 7   c: function() &#123;</span><br><span class="line"> 8     console.log(this.a); //10</span><br><span class="line"> 9     console.log(this); //obj&#123;...&#125;</span><br><span class="line">10   &#125;</span><br><span class="line">11 &#125;</span><br><span class="line">12 obj.b(); </span><br><span class="line">13 obj.c();</span><br></pre></td></tr></table></figure>
+
+
+
+<p>对于函数的<code>this</code>指向问题：</p>
+<ol>
+<li>箭头函数的<code>this</code>永远指向其上下文的 <code>this</code>，任何方法都改变不了其指向，如<code>call(), bind(), apply()</code></li>
+<li>普通函数的<code>this</code>指向调用它的那个对象</li>
+</ol>
+<h2 id="8-对象的简洁语法"><a href="#8-对象的简洁语法" class="headerlink" title="8.对象的简洁语法"></a>8.对象的简洁语法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">1 //传统对象_单体模式写法 key-value模式</span><br><span class="line"> 2 var person = &#123;</span><br><span class="line"> 3     name:&#x27;krry&#x27;,</span><br><span class="line"> 4     age:21,</span><br><span class="line"> 5     showName:function()&#123;</span><br><span class="line"> 6         return this.name;</span><br><span class="line"> 7     &#125;,</span><br><span class="line"> 8     showAge:function()&#123;</span><br><span class="line"> 9         return this.age;</span><br><span class="line">10     &#125;</span><br><span class="line">11 &#125;;</span><br><span class="line">12 // 调用</span><br><span class="line">13 console.log(person.showName()); // krry</span><br><span class="line">14 console.log(person.showAge()); // 21</span><br><span class="line">15 </span><br><span class="line">16 //ES6_单体模式写法  不需要写key</span><br><span class="line">17 var name = &#x27;krry&#x27;;</span><br><span class="line">18 var age = 21;</span><br><span class="line">19 var person = &#123;</span><br><span class="line">20     name,</span><br><span class="line">21     age,</span><br><span class="line">22     showName()&#123;</span><br><span class="line">23         return this.name;</span><br><span class="line">24     &#125;,</span><br><span class="line">25     showAge()&#123;</span><br><span class="line">26         return this.age;</span><br><span class="line">27     &#125;</span><br><span class="line">28 &#125;;</span><br><span class="line">29 // 调用</span><br><span class="line">30 console.log(person.showName()); // krry</span><br><span class="line">31 console.log(person.showAge()); // 21</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-类和继承"><a href="#9-类和继承" class="headerlink" title="9.类和继承"></a>9.类和继承</h2><p>1.传统面向对象的写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1 function Person(name,age)&#123; // 类、构造函数</span><br><span class="line"> 2     this.name = name;</span><br><span class="line"> 3     this.age = age;</span><br><span class="line"> 4 &#125;</span><br><span class="line"> 5 Person.prototype.showName = function()&#123;</span><br><span class="line"> 6     return this.name;</span><br><span class="line"> 7 &#125;;</span><br><span class="line"> 8 Person.prototype.showAge = function()&#123;</span><br><span class="line"> 9     return this.age;</span><br><span class="line">10 &#125;;</span><br><span class="line">11 var p1 = new Person(&#x27;allen&#x27;,28);</span><br><span class="line">12 var p2 = new Person(&#x27;xiaoxiaoyou&#x27;,101);</span><br><span class="line">13 console.log(p1.showName()); // allen</span><br><span class="line">14 console.log(p2.showAge()); // 101</span><br><span class="line">15 console.log(p1.showName == p2.showName); //true 注意不是调用方法，没有括号，所以才true</span><br><span class="line">16 console.log(p1.constructor == Person); // true 构造方法相等</span><br></pre></td></tr></table></figure>
+
+<p>2.ES6面向对象写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1 class Person&#123;</span><br><span class="line"> 2     // 构造器</span><br><span class="line"> 3     constructor(name,age)&#123;</span><br><span class="line"> 4         this.name = name;</span><br><span class="line"> 5         this.age = age;</span><br><span class="line"> 6     &#125;</span><br><span class="line"> 7     showName()&#123;</span><br><span class="line"> 8         return this.name;</span><br><span class="line"> 9     &#125;</span><br><span class="line">10     showAge()&#123;</span><br><span class="line">11         return this.age;</span><br><span class="line">12     &#125;</span><br><span class="line">13 &#125;</span><br><span class="line">14 var p1 = new Person(&#x27;aaa&#x27;,18);</span><br><span class="line">15 var p2 = new Person(&#x27;bbb&#x27;,20);</span><br><span class="line">16 console.log(p1.name); // aaa</span><br><span class="line">17 console.log(p1.showName()); // aaa</span><br><span class="line">18 console.log(p2.showAge()); // 20</span><br><span class="line">19 console.log(p1.showAge == p2.showAge); // true</span><br><span class="line">20 console.log(p1.constructor == Person); // true</span><br></pre></td></tr></table></figure>
+
+<p>3.面向对象给class赋值默认值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1 class Person&#123;</span><br><span class="line"> 2     // 构造器</span><br><span class="line"> 3     constructor(name=&#x27;default&#x27;,age=0)&#123;</span><br><span class="line"> 4         this.name = name;</span><br><span class="line"> 5         this.age = age;</span><br><span class="line"> 6     &#125;</span><br><span class="line"> 7     showName()&#123;</span><br><span class="line"> 8         return this.name;</span><br><span class="line"> 9     &#125;</span><br><span class="line">10     showAge()&#123;</span><br><span class="line">11         return this.age;</span><br><span class="line">12     &#125;</span><br><span class="line">13 &#125;</span><br><span class="line">14 </span><br><span class="line">15 var p1 = new Person();</span><br><span class="line">16 console.log(p1.name); // 构造器里面给的默认值 default</span><br><span class="line">17 console.log(p1.age); // 构造器里面给的默认值 0</span><br></pre></td></tr></table></figure>
+
+<p>4.传统写法原型继承extends</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1 //传统写法原型继承</span><br><span class="line"> 2 function Person(name,age)&#123; // 类、构造函数</span><br><span class="line"> 3     this.name = name;</span><br><span class="line"> 4     this.age = age;</span><br><span class="line"> 5 &#125;</span><br><span class="line"> 6 Person.prototype.showName = function()&#123;</span><br><span class="line"> 7     return this.name;</span><br><span class="line"> 8 &#125;;</span><br><span class="line"> 9 Person.prototype.showAge = function()&#123;</span><br><span class="line">10     return this.age;</span><br><span class="line">11 &#125;;</span><br><span class="line">12 // 工人类</span><br><span class="line">13 function Worker(name,age)&#123;</span><br><span class="line">14     // 属性继承过来</span><br><span class="line">15     Person.apply(this,arguments);</span><br><span class="line">16 &#125;</span><br><span class="line">17 // 原型继承</span><br><span class="line">18 Worker.prototype = new Person();</span><br><span class="line">19 var p1 = new Person(&#x27;allen&#x27;,28);</span><br><span class="line">20 var w1 = new Person(&#x27;worker&#x27;,1000);</span><br><span class="line">21 console.log(w1.showName()); // 确实继承过来了 result：worker</span><br></pre></td></tr></table></figure>
+
+<p>5.<code>ES6中面向对象实现类继承</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">1 class Person&#123;</span><br><span class="line"> 2     // 构造器</span><br><span class="line"> 3     constructor(name,age)&#123;</span><br><span class="line"> 4         this.name = name;</span><br><span class="line"> 5         this.age = age;</span><br><span class="line"> 6     &#125;</span><br><span class="line"> 7     showName()&#123;</span><br><span class="line"> 8         return this.name;</span><br><span class="line"> 9     &#125;</span><br><span class="line">10     showAge()&#123;</span><br><span class="line">11         return this.age;</span><br><span class="line">12     &#125;</span><br><span class="line">13 &#125;</span><br><span class="line">14 class Worker extends Person&#123;</span><br><span class="line">15     constructor(name,age,job=&#x27;啦啦啦&#x27;)&#123;</span><br><span class="line">16         // 继承超父类的属性</span><br><span class="line">17         super(name,age);</span><br><span class="line">18         this.job = job;</span><br><span class="line">19     &#125;</span><br><span class="line">20     showJob()&#123;</span><br><span class="line">21         return this.job;</span><br><span class="line">22     &#125;</span><br><span class="line">23 &#125;</span><br><span class="line">24 var p1 = new Person(&#x27;aaa&#x27;,18);</span><br><span class="line">25 var w1 = new Person(&#x27;www&#x27;,36);</span><br><span class="line">26 var w2 = new Worker(&#x27;wwwwwwww&#x27;,90);</span><br><span class="line">27 console.log(w1.showName()); // www</span><br><span class="line">28 console.log(w2.showJob()); // 默认给的值 ‘啦啦啦’</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-模块化"><a href="#10-模块化" class="headerlink" title="10.模块化"></a>10.模块化</h2><p>import 导入模块、export 导出模块</p>
+<p>可以直接在任何变量或者函数前面加上一个 <code>export</code> 关键字，就可以将它导出。 </p>
+<p>在一个文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 export const sqrt = Math.sqrt;</span><br><span class="line">2 export function square(x) &#123;</span><br><span class="line">3     return x * x;</span><br><span class="line">4 &#125;</span><br><span class="line">5 export function diag(x, y) &#123;</span><br><span class="line">6     return sqrt(square(x) + square(y));</span><br><span class="line">7 &#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在另一个文件中这样引用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 import &#123; square, diag &#125; from &#x27;lib&#x27;;</span><br><span class="line">2 console.log(square(11)); // 121</span><br><span class="line">3 console.log(diag(4, 3));</span><br></pre></td></tr></table></figure>
+
+<p>总结：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">1 //mod.js</span><br><span class="line">  2 // 第一种模块导出的书写方式(一个个的导出)</span><br><span class="line">  3 // 导出普通值</span><br><span class="line">  4 export let a = 12;</span><br><span class="line">  5 export let b = 5;</span><br><span class="line">  6 // 导出json</span><br><span class="line">  7 export let json = &#123;</span><br><span class="line">  8     a,</span><br><span class="line">  9     b</span><br><span class="line"> 10 &#125;;</span><br><span class="line"> 11 // 导出函数</span><br><span class="line"> 12 export let show = function()&#123;</span><br><span class="line"> 13     return &#x27;welcome&#x27;;</span><br><span class="line"> 14 &#125;;</span><br><span class="line"> 15 // 导出类</span><br><span class="line"> 16 export class Person&#123;</span><br><span class="line"> 17     constructor()&#123;</span><br><span class="line"> 18         this.name = &#x27;jam&#x27;;</span><br><span class="line"> 19     &#125;</span><br><span class="line"> 20     showName()&#123;</span><br><span class="line"> 21         return this.name;</span><br><span class="line"> 22     &#125;</span><br><span class="line"> 23 &#125;</span><br><span class="line"> 24 </span><br><span class="line"> 25 //index.js</span><br><span class="line"> 26 //导出模块如果用default了，引入的时候直接用，若没有用default，引入的时候可以用&#123;&#125;的形式</span><br><span class="line"> 27 // 导入模块的方式</span><br><span class="line"> 28 import &#123;</span><br><span class="line"> 29     a,</span><br><span class="line"> 30     b,</span><br><span class="line"> 31     json,</span><br><span class="line"> 32     show,</span><br><span class="line"> 33     Person</span><br><span class="line"> 34 &#125; from &#x27;./mod.js&#x27;;</span><br><span class="line"> 35 console.log(a); // 12</span><br><span class="line"> 36 console.log(b); // 5</span><br><span class="line"> 37 console.log(json.a); // 12</span><br><span class="line"> 38 console.log(json.b); // 5</span><br><span class="line"> 39 console.log(show()); // welcome</span><br><span class="line"> 40 console.log(new Person().showName()); // jam</span><br><span class="line"> 41 </span><br><span class="line"> 42 //mod1.js</span><br><span class="line"> 43 // 第二种模块导出的书写方式</span><br><span class="line"> 44 let a = 12;</span><br><span class="line"> 45 let b = 5;</span><br><span class="line"> 46 let c = 10;</span><br><span class="line"> 47 export &#123;</span><br><span class="line"> 48     a,</span><br><span class="line"> 49     b,</span><br><span class="line"> 50     c as cc // as是别名，使用的时候只能用别名，特别注意下</span><br><span class="line"> 51 &#125;;</span><br><span class="line"> 52 </span><br><span class="line"> 53 //index1.js</span><br><span class="line"> 54 // 导入模块的方式</span><br><span class="line"> 55 import &#123;</span><br><span class="line"> 56     a,</span><br><span class="line"> 57     b,</span><br><span class="line"> 58     cc // cc是导出的，as别名</span><br><span class="line"> 59 &#125; from &#x27;./mod1.js&#x27;;</span><br><span class="line"> 60 console.log(a); // 12</span><br><span class="line"> 61 console.log(b); // 5</span><br><span class="line"> 62 console.log(cc); // 10</span><br><span class="line"> 63 </span><br><span class="line"> 64 //mod2.js</span><br><span class="line"> 65 // 第三种模块导出的书写方式 ---&gt; default</span><br><span class="line"> 66 // default方式的优点，import无需知道变量名，就可以直接使用，如下</span><br><span class="line"> 67 // 每个模块只允许一个默认出口</span><br><span class="line"> 68 var name = &#x27;jam&#x27;;</span><br><span class="line"> 69 var age = &#x27;28&#x27;;</span><br><span class="line"> 70 export default &#123;</span><br><span class="line"> 71     name,</span><br><span class="line"> 72     age,</span><br><span class="line"> 73     default()&#123;</span><br><span class="line"> 74         console.log(&#x27;welcome to es6 module of default...&#x27;);</span><br><span class="line"> 75     &#125;,</span><br><span class="line"> 76     getName()&#123;</span><br><span class="line"> 77         return &#x27;bb&#x27;;</span><br><span class="line"> 78     &#125;,</span><br><span class="line"> 79     getAge()&#123;</span><br><span class="line"> 80         return 2;</span><br><span class="line"> 81     &#125;</span><br><span class="line"> 82 &#125;;</span><br><span class="line"> 83 </span><br><span class="line"> 84 //index2.js</span><br><span class="line"> 85 // 导入模块的方式</span><br><span class="line"> 86 import mainAttr from &#x27;./mod2.js&#x27;;</span><br><span class="line"> 87 var str = &#x27; &#x27;;</span><br><span class="line"> 88 // 直接调用</span><br><span class="line"> 89 console.log(`我的英文名是:$&#123;mainAttr.name&#125;我的年龄是$&#123;mainAttr.age&#125;`);</span><br><span class="line"> 90 mainAttr.default(); // welcome to es6 module of default...</span><br><span class="line"> 91 console.log(mainAttr.getName()); // bb</span><br><span class="line"> 92 console.log(mainAttr.getAge()); // 2</span><br><span class="line"> 93 </span><br><span class="line"> 94 //mod3.js</span><br><span class="line"> 95 var name = &#x27;jam&#x27;;</span><br><span class="line"> 96 var age = &#x27;28&#x27;;</span><br><span class="line"> 97 export function getName()&#123;</span><br><span class="line"> 98     return name;</span><br><span class="line"> 99 &#125;;</span><br><span class="line">100 export function getAge()&#123;</span><br><span class="line">101     return age;</span><br><span class="line">102 &#125;;</span><br><span class="line">103 </span><br><span class="line">104 //index3.js</span><br><span class="line">105 // 导入模块的方式</span><br><span class="line">106 import * as fn from &#x27;./mod3.js&#x27;;</span><br><span class="line">107 // 直接调用</span><br><span class="line">108 console.log(fn.getName()); // jam</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-Promise"><a href="#11-Promise" class="headerlink" title="11.Promise"></a>11.Promise</h2><p>在promise之前代码过多的回调或者嵌套，可读性差、耦合度高、扩展性低。通过Promise机制，扁平化的代码机构，大大提高了代码可读性；用同步编程的方式来编写异步代码，保存线性的代码逻辑，极大的降低了代码耦合性而提高了程序的可扩展性。</p>
+<p>就是用同步的方式去写异步代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">1 //Promise对象 ---&gt; 用来传递异步操作过来的数据的</span><br><span class="line"> 2 //Pending(等待、处理中) ---&gt; Resolve(完成，fullFilled)   ---&gt; Reject(拒绝，失败)</span><br><span class="line"> 3 //这里只是定义，还没开始执行</span><br><span class="line"> 4 var p1 = new Promise(function(resolve,reject)&#123;</span><br><span class="line"> 5     resolve(1); // 成功了，返回一个promise对象1</span><br><span class="line"> 6     // reject(2); // 失败了</span><br><span class="line"> 7 &#125;);</span><br><span class="line"> 8 </span><br><span class="line"> 9 // 接收成功和失败的数据，通过then来传递</span><br><span class="line">10 // then也是返回一个promise对象，会继续往下传递数据,传递给下一个then</span><br><span class="line">11 p1.then(function(value)&#123;</span><br><span class="line">12     // resolve</span><br><span class="line">13     console.log(value); //执行打印1</span><br><span class="line">14     return value + 1; // 1</span><br><span class="line">15     alert(`成功了：$&#123;value&#125;`);</span><br><span class="line">16 &#125;,function(value)&#123;</span><br><span class="line">17     // reject</span><br><span class="line">18     alert(`失败了：$&#123;value&#125;`);</span><br><span class="line">19 &#125;).then(function(value)&#123;</span><br><span class="line">20     console.log(value); // 2</span><br><span class="line">21 &#125;);</span><br><span class="line">22 </span><br><span class="line">23 //catch捕获异常错误</span><br><span class="line">24 var p1 = new Promise(function(resolve,reject)&#123;</span><br><span class="line">25     resolve(&#x27;成功了&#x27;); //返回一个promise对象“成功了”</span><br><span class="line">26 &#125;);</span><br><span class="line">27 //then也是返回一个promise对象，会继续往下传递数据</span><br><span class="line">28 p1.then(function(value)&#123;</span><br><span class="line">29     console.log(value); //打印“成功了”</span><br><span class="line">30     // throw是用来抛错误的</span><br><span class="line">31     throw &#x27;发生了点小意外&#x27;;</span><br><span class="line">32 &#125;).catch(function(e)&#123;</span><br><span class="line">33     // catch用来捕获这个错误的 ---&gt; 追踪</span><br><span class="line">34     console.log(e);</span><br><span class="line">35 &#125;);</span><br><span class="line">36 </span><br><span class="line">37 //all ---&gt; 全部，用于将多个promise对象，组合，包装成</span><br><span class="line">38 //Promise.all([p1,p2,p3,...]); 所有的promise对象，都正确，才走成功</span><br><span class="line">39 //否则，只要有一个错误，就走失败</span><br><span class="line">40 var p1 = Promise.resolve(1);</span><br><span class="line">41 var p2 = Promise.reject(0);</span><br><span class="line">42 Promise.all([true,p1,p2]).then(function(obj)&#123;</span><br><span class="line">43     console.log(`成功了：$&#123;obj&#125;`);</span><br><span class="line">44 &#125;,function(obj)&#123;</span><br><span class="line">45     console.log(`失败了：$&#123;obj&#125;`);</span><br><span class="line">46 &#125;);</span><br><span class="line">47 </span><br><span class="line">48 // race ---&gt; 返回的也是一个promise对象</span><br><span class="line">49 //最先执行的的promise结果，哪个最快我用哪个，所以下面打印的是one</span><br><span class="line">50 var p1 = new Promise(function(resolve,reject)&#123;</span><br><span class="line">51     setTimeout(resolve,50,&#x27;one&#x27;);</span><br><span class="line">52 &#125;);</span><br><span class="line">53 var p2 = new Promise(function(resolve,reject)&#123;</span><br><span class="line">54     setTimeout(resolve,100,&#x27;two&#x27;);</span><br><span class="line">55 &#125;);</span><br><span class="line">56 Promise.race([p1,p2]).then(function(val)&#123;</span><br><span class="line">57     console.log(val);</span><br><span class="line">58 &#125;);</span><br><span class="line">59 </span><br><span class="line">60 //resolve ---&gt; 生成一个成功的promise对象</span><br><span class="line">61 //语法规则：Promise.resolve(val); // 普通值</span><br><span class="line">62 // Promise.resolve(arr); // 数组之类</span><br><span class="line">63 //Promise.resolve(promise); // 传递另一个promise对象</span><br><span class="line">64 //传递普通值</span><br><span class="line">65 Promise.resolve(&#x27;success&#x27;).then(function(val)&#123;</span><br><span class="line">66     // 注意resolve，走得是这里</span><br><span class="line">67     console.log(val); // success</span><br><span class="line">68 &#125;,function(err)&#123;</span><br><span class="line">69     console.log(&quot;err:&quot;+ err);</span><br><span class="line">70 &#125;);</span><br><span class="line">71 //传递数组</span><br><span class="line">72 Promise.resolve([1,2,3]).then(function(val)&#123;</span><br><span class="line">73     // 注意resolve，走得是这里</span><br><span class="line">74     console.log(val); // [1,2,3]</span><br><span class="line">75 &#125;,function(err)&#123;</span><br><span class="line">76     console.log(err);</span><br><span class="line">77 &#125;);</span><br><span class="line">78 //传递一个promise对象</span><br><span class="line">79 var p1 = Promise.resolve(520);</span><br><span class="line">80 var p2 = Promise.resolve(p1);</span><br><span class="line">81 p2.then(function(val)&#123;</span><br><span class="line">82     //从p1那边传递过来的</span><br><span class="line">83     console.log(val); // 520</span><br><span class="line">84 &#125;);</span><br></pre></td></tr></table></figure>
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/2021/05/06/ES6%E7%9B%B8%E5%85%B3/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-02-14T22:50:24+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年2月14日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/js/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>js</p></a></div>
+  <span hidden itemprop="keywords">js</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 2
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/05/06/ES6%E7%9B%B8%E5%85%B3/&title=ES6相关 - 龍&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
     
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/05/06/ES6%E7%9B%B8%E5%85%B3/&title=ES6相关 - 龍&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/05/06/ES6%E7%9B%B8%E5%85%B3/&title=ES6相关 - 龍&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/06/06/dom%E7%9B%B8%E5%85%B3/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>dom相关</p>
+          <p class='content'>dom相关dom即document object model.
+1.获取元素的几种方法
+doucment.getElementById();
+document.getElementsByTagN...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/01/01/Java%20IO%E6%B5%81/'>
+          <p class='title'>Java IO流<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>5.IO流IO流常用基类字节流的抽象基类：
+InputStream ，OutputStream。
+字符流的抽象基类：
+Reader ， Writer。
+File类Java文件类以抽象的方式代表文...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2021/05/06/ES6%E7%9B%B8%E5%85%B3/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
 
 
 </div>
@@ -3111,157 +2680,48 @@ ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://i.328888.xyz/2022/12/17/4cTYQ.jpeg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Dragon_Blog</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">龍</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:857134647@qq.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/chiwuu"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/JavaScript/" href="/categories/JavaScript/"
-            active-action="action-categoriesJavaScript"
-            ><div class='name'>JavaScript</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Vue2/" href="/categories/Vue2/"
-            active-action="action-categoriesVue2"
-            ><div class='name'>Vue2</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/git/" href="/categories/git/"
-            active-action="action-categoriesgit"
-            ><div class='name'>git</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%89%8D%E7%AB%AF/" href="/categories/%E5%89%8D%E7%AB%AF/"
-            active-action="action-categoriesE5898DE7ABAF"
-            ><div class='name'>前端</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"
-            active-action="action-categoriesE5B08FE7A88BE5BA8F"
-            ><div class='name'>小程序</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
-            active-action="action-categoriesE697A5E5B8B8"
-            ><div class='name'>日常</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Java/" style="font-size: 19px; color: #777">Java</a> <a href="/tags/VUe2/" style="font-size: 14px; color: #999">VUe2</a> <a href="/tags/Vue2/" style="font-size: 14px; color: #999">Vue2</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/js/" style="font-size: 14px; color: #999">js</a> <a href="/tags/uniapp/" style="font-size: 14px; color: #999">uniapp</a> <a href="/tags/webpack/" style="font-size: 14px; color: #999">webpack</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 24px; color: #555">前端</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 19px; color: #777">后端</a> <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 14px; color: #999">小程序</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 14px; color: #999">日常</a>
-    </div>
-  </section>
-
-
-    
-  
-
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-let%E5%92%8Cconst"><span class="toc-text">1.let和const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="toc-text">2.字符串拼接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-text">3.解构赋值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A4%8D%E5%88%B6%E6%95%B0%E7%BB%84"><span class="toc-text">4.复制数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%A2%9E%E5%8A%A0%E4%BA%86map%E5%AF%B9%E8%B1%A1%E3%80%82%E5%80%BE%E5%90%91%E4%BA%8E%E5%90%8E%E5%8F%B0"><span class="toc-text">5.增加了map对象。倾向于后台</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-for-of%E5%BE%AA%E7%8E%AF"><span class="toc-text">6.for-of循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-text">7.箭头函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%AE%80%E6%B4%81%E8%AF%AD%E6%B3%95"><span class="toc-text">8.对象的简洁语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E7%B1%BB%E5%92%8C%E7%BB%A7%E6%89%BF"><span class="toc-text">9.类和继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-text">10.模块化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-Promise"><span class="toc-text">11.Promise</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3296,7 +2756,7 @@ ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3305,15 +2765,15 @@ ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -3898,7 +3358,7 @@ ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":null},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"龍"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"龍","url":"http://example.com/","keywords":null,"description":null,"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":null},"publisher":{"@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":null,"inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"龍","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":null},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"龍"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/JavaScript/","name":"JavaScript"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/05/06/ES6相关/","name":"ES6相关"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"龍","url":"http://example.com/","keywords":null,"description":null,"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":null},"publisher":{"@type":"Organization","name":"龍","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"ES6相关","description":null,"inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/05/06/ES6%E7%9B%B8%E5%85%B3/"},"author":{"@type":"Person","name":"龍","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"龍","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/05/06/ES6%E7%9B%B8%E5%85%B3/","wordCount":0,"datePublished":"2021-05-06T04:16:12.000Z","dateModified":"2023-02-14T14:50:24.388Z","articleSection":"JavaScript","keywords":"js","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
